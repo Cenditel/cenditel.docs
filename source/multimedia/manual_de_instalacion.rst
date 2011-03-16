@@ -2,8 +2,8 @@
 
 .. _ManualdeInstalacion:
 
-Manual de Instalación:
-----------------------
+Manual de Instalación
+---------------------
 
 El manual de Instalación del los productos cenditel.audio y cenditel.video cuenta basicamente con dos partes:
 

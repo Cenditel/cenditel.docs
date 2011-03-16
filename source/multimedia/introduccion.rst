@@ -2,8 +2,8 @@
 
 .. _Introducción:
 
-Introducción:
--------------
+Introducción
+------------
 
 Esta es la documentación del producto ``cenditel.multimedia`` para el sistema
 manejador de contenidos Plone. En las siguientes paginas encontrará material

@@ -1,8 +1,8 @@
 .. highlight:: rest
 
-.. _uso:
+.. _ManualUso:
 
-Manual de Uso:
---------------
+Manual de Uso
+-------------
 
 Por definir
