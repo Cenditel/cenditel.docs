@@ -27,11 +27,9 @@ Para realizar la descarga proceda en un terminal con los siguientes comandos:
 
 .. code-block:: console
 
-    usuario@equipo:~$ mkdir buildouts
-    usuario@equipo:~$ cd buildouts
-    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.ppm/buildouts/plone3/ ppm.buildout
-    usuario@equipo:~/buildouts$ cd ppm.buildout
-    usuario@equipo:~/buildouts/ppm.buildout ls -p
+    $ mkdir buildouts ; cd buildouts
+    $ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.ppm/buildouts/plone3/ ppm.buildout
+    $ cd ppm.buildout ; ls -p
     00-varibles.cfg        02-mrdeveloper.cfg  bootstrap.py  cenditel.ppm.cfg     etc/           products/  templates/
     01-dumpedversions.cfg  03-mountpoint.cfg   buildout.cfg  dumped-versions.cfg  plonesite.cfg  src/       versions.cfg
     
@@ -64,18 +62,17 @@ Proceda como se señala a continuación.
 
 .. code-block:: console
 
-    usuario@equipo:~$ sudo aptitude install python2.4 python2.4-minimal python2.4-dev python-virtualenv python-setuptools 
-    usuario@equipo:~$ virtualenv -p python2.4 py2.4/
-    usuario@equipo:~$ cd py2.4/
-    usuario@equipo:~/py2.4$ source bin/activate
-    usuario@equipo:~/py2.4$ cd
-    usuario@equipo:~$ cd buildouts/ppm.buildout
-    usuario@equipo:~/buildouts/ppm.buildout$ python bootstrap.py
+    $ sudo aptitude install python2.4 python2.4-minimal python2.4-dev python-virtualenv python-setuptools 
+    $ virtualenv -p python2.4 python2.4/
+    $ cd python2.4/
+    $ source bin/activate
+    (python2.4)$ cd $HOME/buildouts/ppm.buildout
+    (python2.4)$ python bootstrap.py
 
 El primer comando, instala las dependencias python en el sistema operativo. Si
 usted se encuentra bajo el sistema operativo Debian Lenny o Ubuntu Karmic Koala,
 no tendrá problemas de dependencias. El segundo comando, crea una jaula virtual
-de python en su directorio de usuario llamada py2.4, con el tercer comando entramos a ella,
+de python en su directorio de usuario llamada python2.4, con el tercer comando entramos a ella,
 para activarla usamos el cuarto comando, los siguientes comandos nos llevan al
 entorno de desarrollo allí llamamos al interprete de python para que ejecute al
 archivo bootstrap.py; el cual nos dará una salida como:
@@ -89,7 +86,7 @@ Para eso, ejecutaremos el siguiente comando.
 
 .. code-block:: console
 
-    usuario@equipo:~/buildouts/ppm.buildout$ ./bin/buildout -vNc cenditel.ppm.cfg
+    (python2.4)$ ./bin/buildout -vNc cenditel.ppm.cfg
     
 Este comando descarga automáticamente todas las dependencias de PPM y las pone en los
 lugares correspondientes e instala Plone 3.3
@@ -105,23 +102,12 @@ Productos e instalar Project Portfolio Management Framework NG y sus dependencia
 Dependencias
 ------------
 
-**DataGridField**, es un componente de entrada de la tabla para `Plone <http://plone.org/>`_. Utiliza
-Javascript para hacer la introducción de datos tabulares más de proceso de usuario 
-amigable - no hay ida y vuelta peticiones HTTP al servidor al insertar o eliminar filas.
-Más información consulte la siguiente página web: http://plone.org/products/datagridfield
+- **DataGridField**, es un componente de entrada de la tabla para `Plone <http://plone.org/>`_. Utiliza Javascript para hacer la introducción de datos tabulares más de proceso de usuario amigable - no hay ida y vuelta peticiones HTTP al servidor al insertar o eliminar filas. Más información consulte su `pagina <http://plone.org/products/datagridfield>`_ del proyecto. 
 
-**Poi**, es un producto de seguimiento de incidencias para Plone.
-su objetivo es ser sencillo y atractivo, proporcionando
-la cuestiones más necesarias para el seguimiento de funcionalidades.
-Más información consulte la siguiente página web: http://plone.org/products/poi
+- **Poi**, es un producto de seguimiento de incidencias para Plone. su objetivo es ser sencillo y atractivo, proporcionando la cuestiones más necesarias para el seguimiento de funcionalidades. Más información consulte su `pagina <http://plone.org/products/poi>`_ del proyecto.
  
-**Quills:** es un `weblog <http://es.wikipedia.org/wiki/Weblog>`_  para `Plone <http://plone.org/>`_. Se ha diseñado desde cero para trabajar
-bien y ofrecer funciones especializadas para una multi-blog, el medio
-ambiente multi-usuario. Más información consulte la siguiente página web: http://plone.org/products/quills
+- **Quills:** es un `weblog <http://es.wikipedia.org/wiki/Weblog>`_  para `Plone <http://plone.org/>`_. Se ha diseñado desde cero para trabajar bien y ofrecer funciones especializadas para una multi-blog, el medio ambiente multi-usuario. Más información consulte su `pagina <http://plone.org/products/quills>`_ del proyecto.
 
-**Ploneboard:** es un producto para `Plone <http://plone.org/>`_ su objetivo es poner el comportamiento de
-un foro de debate en un sitio Plone. Más información consulte la siguiente página web: http://plone.org/products/ploneboard
+- **Ploneboard:** es un producto para `Plone <http://plone.org/>`_ su objetivo es poner el comportamiento de un foro de debate en un sitio Plone. Más información consulte su `pagina <http://plone.org/products/ploneboard>`_ del proyecto.
 
-**CPFCKTemplates:** es un producto con el que usted puede agregar una plantilla para el editor `FCKeditor <http://plone.org/products/fckeditor/>`_  como un contenido de
-Plone. Cada usuario verá el "habilitado " las plantillas que se encuentran en el catálogo,
-es decir, sólo las plantillas que el usuario tiene permiso para ver. Más información consulte la siguiente página web: http://www.communesplone.org/support/documentation/manual/produit-de-gestion-des-modeles-fckeditor/referencemanual-all-pages
+- **CPFCKTemplates:** es un producto con el que usted puede agregar una plantilla para el editor `FCKeditor <http://plone.org/products/fckeditor/>`_ como un contenido de Plone. Cada usuario verá el "habilitado " las plantillas que se encuentran en el catálogo, es decir, sólo las plantillas que el usuario tiene permiso para ver. Más información consulte su `manual de uso <http://translate.google.com/translate?sl=fr&tl=es&js=n&prev=_t&hl=es&ie=UTF-8&layout=2&eotf=1&u=http%3A%2F%2Fwww.communesplone.org%2Fsupport%2Fdocumentation%2Fmanual%2Fproduit-de-gestion-des-modeles-fckeditor%2Freferencemanual-all-pages>`_ del producto. 
