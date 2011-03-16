@@ -5,6 +5,15 @@
 Manual de Instalación:
 ----------------------
 
+El manual de Instalación del los productos cenditel.audio y cenditel.video cuenta basicamente con dos partes:
+
+* Instalación en Instancias Zope Plone 3.3.5
+* Instalación en Instancias Cyn.in 3.1.3
+
+
+Primera parte:
+--------------
+
 Para instalar el producto cenditel.multimedia usted necesita solventar las
 siguientes dependencias en su instancia Plone/Zope:
 
@@ -13,20 +22,25 @@ siguientes dependencias en su instancia Plone/Zope:
 
 A continuación veremos los pasos necesarios para replicar el ambiente de desarrollo:
 
-
 Primer Paso:
 ^^^^^^^^^^^^
-Descargar de la pagina Web del Proyecto el script de instalación buildout que le permitirá configurar un sitio demostrativo.
+Descargar de la pagina Web del Proyecto el script de instalación buildout que le permitira configurar un sitio demostrativo.
 Para realizar la descarga proceda en un terminal con los siguientes comandos:
 
 .. code-block:: console
 
     usuario@equipo:~$ mkdir buildouts
     usuario@equipo:~$ cd buildouts
-    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.multimedia/buildout/plone/3.3/ cenditelmultimedia
-    usuario@equipo:~/buildouts$ cd cenditelmultimedia
+    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.multimedia/buildout/plone/3.3/ plone.cenditel.multimedia
+    usuario@equipo:~/buildouts$ cd plone.cenditel.multimedia
     usuario@equipo:~/buildouts/cenditelmultimedia$ ls 
-    bootstrap.py  buildout.cfg  cenditelmultimedia.cfg  contenttypes.cfg  dumped-versions.cfg  dumpedversions.cfg  prerequemients.cfg  versions.cfg
+    00-varibles.cfg           06-contenttypes.cfg     plonesite.cfg
+    01-dumpedversions.cfg     bootstrap.py            products
+    02-mrdeveloper.cfg        buildout.cfg            src
+    03-prerequemients.cfg     cenditelmultimedia.cfg  templates
+    04-mountpoint.cfg         dumped-versions.cfg     versions.cfg
+    05-mediafilesstorage.cfg  etc
+
 
 El primer comando es el encargado de crear un directorio para nuestros proyectos
 buildout, el segundo comando abre dicho directorio pero la magia realmente se encuentra
@@ -35,7 +49,7 @@ los scripts listados por el cuarto comando.
 
 .. _subversion: http://subversion.apache.org/
 
-Para saber un poco más acerca de scripts listados, seran explicados a continuación.
+Para saber un poco más acerca de scripts listados, serán explicados a continuación.
 
 bootstrap.py:
 """""""""""""
@@ -46,38 +60,161 @@ ambiente de desarrollo buildout para sitios Web basados en Zope/Plone
 buildout.cfg:
 """""""""""""
 
-Archivo de configuración que posee las características necesarias para la construcción
+Archivo de configuración que posee las caracteristicas necesarias para la construcción
 de un sitio Web basado basíco en el sistema manejador de contenidos Plone.
+
+00-varibles.cfg
+"""""""""""""""
+
+Como su nombre lo indica, contiene las variables a ser utilizadas por el sistema
+de instalación buildout para la reconstrucción del sitio de pruebas.
+
+Se divide en cuatro partes:
+
+* buildout: Posee la definición de las variables de extensión del producto al momento de ser ejecutado el script, es decir indica el orden de ejecución, para eso usa la variable ``extends=``, además declara la variable ``site-id`` con un nombre de sitio que va a ser usado más adelante.
+
+* zopeserver: Contiene configuraciones referentes al servidor de aplicaciones Zope.
+    * La primera variable de esta parte es la variable ``user`` que indica el nombre de usuario y contraseña del usuario admin del servidor con las configuraciones por defecto.
+    * La segunda variable ``effective-user`` corresponde al usuario unix del servidor.
+    * La tercera variable ``host`` es una variable correspondiente a la dirección IP del servidor Web.
+    * La cuarta variable ``debug-mode`` indica si el servidor se encuentra en modo de depuración, por defecto se encuentra en off.
+    * La quinta variable, ``verbose-security`` indica si se presentan informes detallados de la seguridad, por defecto se encuentra en off.
+    
+* hosts: Contiene las distintas variables de conexión al servidor de producción.
+    * Variable ``http-address``, corresponde a la dirección del Servidor Web Zope.
+    * Variable ``ftp-address``, corresponde a la dirección del Servidor FTP de Zope.
+    * Variable ``webdav-address``, corresponde a la dirección del Servidor WebDav de Zope
+    * Variable ``dns``, nombre del dominio producción o la direccion IP
+    * Variable ``user``, corresponde al usurio de servicios ssh que se conectara al Hosting del servidor.
+    * Variable ``password``, corresponde a la contraseña del servicio ssh para conectarse al Hosting de servidor
+    
+* ports: Contiene las variable de los distintos puertos para los diferentes servicios.
+    * Variable ``http-address``, contiene el puerto de entrada a la aplicación http.
+    * Variable ``ftp-address``, contiene el puerto de entrada a la aplicación mediante ftp.
+    * Variable ``webdav-address``, contiene el puerto de entrada a la aplicación mediante servicios WebDAV.
+
+01-dumpedversions.cfg:
+""""""""""""""""""""""
+Contiene el recipe `buildout.dumppickedversions <http://pypi.python.org/pypi/buildout.dumppickedversions>`_ el cual crea al archivo dumped-versions.cfg
+que contiene la lista de productos instalados y sus respectivas versiones. Se actualiza cada vez que se ejecuta buildout.
+
+02-mrdeveloper.cfg:
+"""""""""""""""""""
+Consta de la sección buildout y la sección sources, en la primera es declarada la variable ``extends`` que
+permite la extención de las configuraciones a partir del archivo 01-dumpedversions.cfg. Por otro lado
+agrega la extensión para buildout `mr.developer <http://pypi.python.org/pypi/mr.developer>`_ 
+
+El recipe mr.developer admite las siguientes variables de configuración:
+
+* sources-dir: Indica el directorio donde seran descargados los distintos productos, por defecto es ``src``.
+* sources: Indica el nombre de la sección donde serán indicados los paquetes a descargar.
+* always-check: Especifica el nombre de los archivos a los cuales siempre que buildout se ejecute se le realizará check out.
+* auto-checkout: Especifica el nombre de los archivos a los cuales siempre que buildout se ejecute se le realizará check out.
+
+Por otro lado, la sección sources se encuentra vacia porque aún no es necesaria su utilización.
+
+03-prerequemients.cfg:
+""""""""""""""""""""""
+
+Este Script cuenta de las siguientes partes: pre-requemients, make-fss-directory, vhost-nginx, mime-types-nginx, config-nginx.
+
+* pre-requemients: Usa el recipe `plone.recipe.command <http://pypi.python.org/pypi/plone.recipe.command>`_ el cual es utilizado para lanzar el comando de instalación necesario para instalar nginx y ffmpeg, mediante la variable ``command``. 
+* make-fss-directory: Usa el recipe `plone.recipe.command <http://pypi.python.org/pypi/plone.recipe.command>`_ , con el cual se crean los directorios necesarios para el producto `File Sistem Storage <http://plone.org/products/filesystemstorage>`_ y para la creación de archivos de configuración del servidor nginx. Además de los comandos lanzados con ``command`` utiliza las siguientes variables:
+    * update-command: Esta variable, es utilizada cuando buildout es ejecutado pero la parte no ha sido alterada.
+    * stop-on-error: Cuando el valor es yes, no o true. Buildout detiene su ejecución si un comando recibe un valor de salida cero.
+* vhost-nginx: Usa el recipe `collective.recipe.template <http://pypi.python.org/pypi/collective.recipe.template>`_, mediante este, se crea una template de ejemplo que va a ser utilizada por el servidor nginx para realizar el servicio de streaming.
+* mime-types-nginx: Usa el recipe `collective.recipe.template <http://pypi.python.org/pypi/collective.recipe.template>`_ para crear un archivo de configuración de mimetypes para el servidor web nginx.
+* config-nginx: Usa el recipe `plone.recipe.command <http://pypi.python.org/pypi/plone.recipe.command>`_ y con los comandos, crea enlaces simbolicos, verifica la configuración del servidor web nginx y además recarga la configuración.
+    * update-command: Esta variable, es utilizada cuando buildout es ejecutado pero la parte no ha sido alterada.
+    * stop-on-error: Cuando el valor es yes, no o true. Buildout detiene su ejecución si un comando recibe un valor de salida cero.
+
+04-mountpoint.cfg:
+""""""""""""""""""
+
+Este arhivo de configuración, crea punto de montaje en la para un sitio web basado en Plone de manera tal,
+que se permitan Bases de Datos separadas para cada sitio Plone. Para mayor información puede visitar este `link <http://plone.org/documentation/kb/multiple-plone-sites-per-zope-instance-using-separate-data-fs-files-for-each-one>`_
+
+
+05-mediafilestorage.cfg:
+""""""""""""""""""""""""
+
+Este script tiene las configuraciones necesarias para el manejo de los archivos de audio y vídeo, a
+nivel del disco duro. Consta de cuatro secciones:
+
+* buildout: Se declara la variable extends, y se indica que este script continua con las configuraciones a partir del archivo 04-mountpoint.cfg. Y se declara la adición de la parte fss.
+
+* instance: agrega eggs python necesarios para la configuración del servidor Zope de manera que este use el sistema de archivos.
+
+* fss: Utiliza el recipe `iw.recipe.ffs <http://pypi.python.org/pypi/iw.recipe.fss>`_, el recipe consta de las siguientes variables:
+    * zope-instances: Por defecto tiene asignado el valor ``${instance:location}``
+    * storage: En esta variable se indica los lugares donde seran colocados los distintos archivos, consiste en tres configuraciones:
+        * global: Explica el tipo de almacenamiento global para todos los sitios.
+        * Almacenamiento específico para cada sitio: Despues de la linea global se pueden declarar estrategias de almacenamiento específicas para cada sitio. Para ello se sigue la sintaxis:
+
+             plone_flat /sitename site2 path/to/storage
+             
+             donde:
+             
+             * plone_flat: es un alias para la configuración.
+             * sitename: Es el nombre de un sitio que se encuentra en el root de la ZMI
+             * site2: Es la configuración de almacenamiento para el sitio.
+             * path/to/storage: Es el sitio en el disco duro donde iw.fss colocará los archivos que vienen de la ZODB.
+
+* versions: Especifica versiones especificas que son necesarias para la instalación del sistema.
+
+06-contenttypes.cfg:
+""""""""""""""""""""
+
+Extiende del archivo de configuración 05-mediafilestorage.cfg, además en este archivo es declarada una parte llamada ``contenttypes-conf``
+que utiliza el recipe `plone.recipe.atcontenttypes <http://pypi.python.org/pypi/plone.recipe.atcontenttypes>`_ en esta configuración
+la variable ``max-file-size`` especifica el tamaño maximo que los tipos de contenido  pueden tener dentro de los sitios plone, la variable ``max-image-dimension``
+específica la resolución maxima en pixeles, para las imagenes de los contenidos de noticias y para las imagenes. Por ultimo,
+la variable ``pil-quality`` señala, la calidad con que serán guardadas las imagenes.
+
 
 cenditelmultimedia.cfg:
 """""""""""""""""""""""
 
-Posee las configuraciones del Producto File System Storage para Plone, usando
-el recipe de configuración `iw.recipe.ffs <http://pypi.python.org/pypi/iw.recipe.fss>`_, para un sitio llamado ``justvideos``
-que es creado en otra sección usando el recipe `collective.recipe.plonesite <http://pypi.python.org/pypi/collective.recipe.plonesite>`_  el cual instala
-los productos vinculados al desarrollo que serán mencionados más adelante
+Extiende del archivo de configuración 06-contenttypes.cfg, posee las siguientes variables:
 
-contenttypes.cfg:
-"""""""""""""""""
-Utiliza el recipe buildout `plone.recipe.atcontenttypes <http://pypi.python.org/pypi/plone.recipe.atcontenttypes>`_ para limitar el tamaño máximo
-de los tipos de contenido ATImage, ATFile y ATNewsItem; además de la calidad de imagen de los ATImage.
+* auto-checkout: Declara los eggs a los cuales el recipe mr.developer mencionado previamente realizará un check out.
+* eggs: Indica al script buildout cuales paquetes de tipo huevo python debe descargar para instalación.
+* zcml: Indica a buildout, cuales paquetes de tipo huevo python deben ser configurados en base a archivos de configuración zcml.
 
-dumped-versions.cfg:
-""""""""""""""""""""
-Recibe los valores de versión de las dependencias instaladas por los distintos recipes.
-Es creado usando el recipe ``buildout.dumppickedversions``
+Además contiene la parte de la declaración de los paquetes a los cuales se les realizará un check out para la instalación de los mismos
+en la instancia Zope, es decir la parte sources que fue previamente mencionada en el archivo 02-mrdeveloper.cfg.
 
-dumpedversions.cfg:
-"""""""""""""""""""
-Contiene el recipe `buildout.dumppickedversions <http://pypi.python.org/pypi/buildout.dumppickedversions>`_ el cual crea al archivo dumped-versions.cfg
+plonesite.cfg:
+""""""""""""""
 
-prerequemients.cfg:
-"""""""""""""""""""
-Usa al recipe `plone.recipe.command <http://pypi.python.org/pypi/plone.recipe.command>`_ para crear directorios necesarios para el producto `File Sistem Storage <http://plone.org/products/filesystemstorage>`_ 
+Extiende del archivo de configuración cenditelmultimedia.cfg. Utiliza el recipe `collective.recipe.plonesite <http://pypi.python.org/pypi/collective.recipe.plonesite>`_
+aceptando las siguientes variables de configuración:
 
-versions.cfg:
-"""""""""""""
+* site-id: Nombre del sitio de ejemplo creado con el recipe.
+* intance: Corresponde al nombre de la instancia que esta corriendo el script, por defecto ``instance``.
+* profiles: Corresponde a una lista de perfiles de GenericSetup que se ejecutaran cada vez que se ejecute el script buildout.
 
+templates:
+""""""""""
+
+Este directorio contiene modelos de archivos de configuración que son modificados en base
+a las variables declaradas en el archivo 00-variables.cfg, permitiendo replicar configuraciones para el servidor nginx.
+
+products:
+"""""""""
+
+Corresponde al directorio products creado por bootstrap.py.
+
+src:
+""""
+
+Es el directorio de instalación donde serán colocados los archivos en desarrollo. En este caso, el recipe
+mr.developer coloca aquí dichos archivos. 
+
+etc:
+""""
+
+En este directorio, son colocados los archivos de salida generados a partir del recipe de `collective.recipe.template <http://pypi.python.org/pypi/collective.recipe.template>`_
 
 Segundo paso:
 ^^^^^^^^^^^^^
@@ -97,8 +234,8 @@ Proceda como se señala a continuación.
     
 El primer comando, instala las dependencias python en el sistema operativo. Si
 usted se encuentra bajo el sistema operativo Debian Lenny o Ubuntu Karmic Koala,
-no tendrá problemas de dependencias. El segundo comando, crea una jaula virtual
-de python en su directorio de usuario llamada py2.4, con el tercer comando entramos a ella,
+no tendra problemas de dependencias. El segundo comando, crea una jaula virtual
+de python en su directorio de usuario llamada py2.4, con el tecer comando entramos a ella,
 para activarla usamos el cuarto comando, los siguientes comandos nos llevan al
 entorno de desarrollo allí llamamos al interprete de python para que ejecute al
 archivo bootstrap.py; el cual nos dará una salida como:
@@ -120,135 +257,13 @@ archivo bootstrap.py; el cual nos dará una salida como:
 
 Tercer Paso:
 ^^^^^^^^^^^^
-Luego, nos dirigimos al directorio src que acaba de ser creado, y realizamos la
-descarga de los productos que serán utilizados usando los siguientes comandos:
 
 .. code-block:: console
 
-    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/browser/proyectosInstitucionales/renasen/cenditel.multimedia/trunk cenditel.multimedia
-    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/browser/proyectosInstitucionales/renasen/cenditel.multimediapanel/trunk cenditel.multimediapanel
-    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/browser/proyectosInstitucionales/renasen/cenditel.multimediaplayertheme/trunk cenditel.multimediaplayertheme
+    usuario@equipo:~/buildouts/cenditelmultimedia$ ./bin/buildout -vc plonesite.cfg
 
-A continuación, podemos proceder a realizar la instalación del sitio de demostración.
-Para eso, ejecutaremos el siguiente comando.
-
-.. code-block:: console
-
-    usuario@equipo:~/buildouts/cenditelmultimedia$ ./bin/buildout -vc cenditelmultimedia.cfg
-
-El comando, lee el archivo de configuración ``cenditelmultimedia.cfg``, que se puede leer a continuación:
-
-.. code-block:: console
-    
-    # Buildout Configuration File for cenditel.multimedia 
-    [buildout]
-    
-    extends = contenttypes.cfg
-    parts +=
-        plonesite
-        fss        
-    
-    
-    ############################################
-    # Eggs
-    #
-    eggs += cenditel.multimedia
-            cenditel.multimediapanel
-            cenditel.multimediaplayertheme
-          
-    
-    zcml += 
-    
-    ############################################
-    # Development Eggs
-    #
-    develop += src/cenditel.multimedia
-               src/cenditel.multimediapanel
-               src/cenditel.multimediaplayertheme
-    
-    [instance]
-    eggs +=
-        iw.fss
-        collective.monkeypatcher
-    
-    #effective-user = victor
-    Plone-user=victor
-    
-    # This recipe is to create and update a plone site.
-    # For options see http://pypi.python.org/pypi/collective.recipe.plonesite
-    [plonesite]
-    recipe = collective.recipe.plonesite
-    
-    # id for a Plone site
-    site-id = justvideos
-    
-     
-    instance = instance
-    
-    # 
-    #profiles-initial = my.package:initial
-    profiles =
-         iw.fss:default
-         cenditel.multimedia:default
-         cenditel.multimediapanel:default
-         cenditel.multimediatheme:default
-         
-    #post-extras =
-    #    ${buildout:directory}/my_script.py
-    #
-    #pre-extras =
-    #    ${buildout:directory}/my_other_script.py
-
-    # This recipe to configure File System Storage.
-    # For options see http://pypi.python.org/pypi/iw.recipe.fss
-
-    [fss]
-    recipe = iw.recipe.fss
-    # Filesystem path for the configuration file. Need the complete path to the file.
-    #conf = ${zopeinstance:location}/etc/plone-filesystemstorage.conf
-    
-    # List of filesystem paths for standalone zope instances or ZEO client instances. One path by line.
-    zope-instances=
-        ${instance:location}
-    
-    # List of FSS configurations for your buildout.
-    # The first line is for the global configuration.
-    # Following lines are by zope path specific configurations.
-    storages =
-        global / flat
-    
-    # Para cynin
-    #    pone_flat /cynin site2 /home/${instance:effective-user}/public_html/
-    #    other_site /cynapse site2 /home/${instance:effective-user}/public_html/filesystemstorage
-    
-    # Para Plone 3.3.5
-        plone_flat /justvideos site2 /home/${instance:Plone-user}/justvideos
-
-El archivo de configuración, se divide en las siguientes secciones:
-
-Instance:
-"""""""""
-En esta sección se declaran las variables de configuración ``extends``, ``parts``, ``eggs`` y ``develop`` que explicaremos a continuación:
-
-* ``extends`` : Apunta al archivo de configuración que presede al archivo actual cenditelmultimedia.cfg, para mayor información revise la documentación de buildout.
-* ``parts`` : En esta sección se declaran las otras secciones que serán parte del documento.
-* ``eggs`` : Son los paquetes python que se instalaran en el servidor Zope/Plone al ser ejecutado el script buildout.
-* ``develop`` : apunta al directorio y nombre de paquete que deben ser desarrollados por buildout.
-
-
-Plonesite:
-""""""""""
-Esta sección usa al recipe `collective.recipe.plonesite <http://pypi.python.org/pypi/collective.recipe.plonesite>`_
-para crear un sitio Plone básico. La variable ``site-id`` es el identificador del
-sitio creado, la variable ``instance`` le indica al recipe la instancia Zope/Plone
-que debe utilizar, la variable ``profiles`` indica al servidor que al momento de
-crear el sitio instale los paquetes señalados usando el perfil de GenericSetup especificado.
-Para mayor información acerca de las variable y configuraciones que adminte el recipe,
-visite la pagina de documentación oficial en `pypi <http://pypi.python.org/pypi/collective.recipe.plonesite>`_
-
-
-FSS:
-""""
+Al realizar esto, buildout ejecutará las configuraciones necesarias en el sitio para instalar los productos. A continuación vamos a ver
+como configurar el resto de la aplicación. 
 
 
 
