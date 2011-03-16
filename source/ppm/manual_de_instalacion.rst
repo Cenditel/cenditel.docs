@@ -6,7 +6,7 @@ Instalación
 -----------
 
 
-PPM (Portafolio Project Manamegent) Es un producto para Plone
+PPM (Portafolio Project Manamegent), es un producto para Plone
 el cual ayuda a determinar la combinación óptima y la secuencia
 de los proyectos propuestos para lograr los mejores objetivos
 y así describir los métodos para el análisis y la gestión
@@ -21,7 +21,7 @@ el ambiente de desarrollo:
 Primer Paso:
 ^^^^^^^^^^^^
 Descargar de la pagina Web del Proyecto el script de instalación buildout que le
-permitira configurar un sitio.
+permitirá configurar un sitio.
 
 Para realizar la descarga proceda en un terminal con los siguientes comandos:
 
@@ -29,10 +29,11 @@ Para realizar la descarga proceda en un terminal con los siguientes comandos:
 
     usuario@equipo:~$ mkdir buildouts
     usuario@equipo:~$ cd buildouts
-    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/eGov/ppm/buildout/plone/3.3 PPM
-    usuario@equipo:~/buildouts$ cd PPM
-    usuario@equipo:~/buildouts/PPM ls
-    bootstrap.py  buildout.cfg  ppm.cfg
+    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.ppm/buildouts/plone3/ ppm.buildout
+    usuario@equipo:~/buildouts$ cd ppm.buildout
+    usuario@equipo:~/buildouts/ppm.buildout ls -p
+    00-varibles.cfg        02-mrdeveloper.cfg  bootstrap.py  cenditel.ppm.cfg     etc/           products/  templates/
+    01-dumpedversions.cfg  03-mountpoint.cfg   buildout.cfg  dumped-versions.cfg  plonesite.cfg  src/       versions.cfg
     
 El primer comando es el encargado de crear un directorio para nuestros proyectos
 buildout, el segundo comando abre dicho directorio , el tercero es el encargado de descargar del repositorio
@@ -49,13 +50,13 @@ ambiente de desarrollo buildout para sitios Web basados en Zope/Plone
 buildout.cfg:
 """""""""""""
 
-Archivo de configuración que posee las caracteristicas necesarias para la construcción
-de un sitio Web basado basíco en el sistema manejador de contenidos Plone.
+Archivo de configuración que posee las características necesarias para la construcción
+de un sitio Web basado básico en el sistema manejador de contenidos Plone.
 
-ppm.cfg:
-""""""""
+cenditel.ppm.cfg:
+"""""""""""""""""
 
-Contiene las configuraciónes del Producto y productos adicionales que necesita PPM para poder instalarlo
+Contiene las configuraciones del Producto y productos adicionales que necesita PPM para poder instalarlo
 
 
 Instale una jaula de python2.4 en su sistema para evitar daños a su sistema operativo.
@@ -68,8 +69,8 @@ Proceda como se señala a continuación.
     usuario@equipo:~$ cd py2.4/
     usuario@equipo:~/py2.4$ source bin/activate
     usuario@equipo:~/py2.4$ cd
-    usuario@equipo:~$ cd buildouts/PPM
-    usuario@equipo:~/buildouts/PPM$ python bootstrap.py
+    usuario@equipo:~$ cd buildouts/ppm.buildout
+    usuario@equipo:~/buildouts/ppm.buildout$ python bootstrap.py
 
 El primer comando, instala las dependencias python en el sistema operativo. Si
 usted se encuentra bajo el sistema operativo Debian Lenny o Ubuntu Karmic Koala,
@@ -88,7 +89,7 @@ Para eso, ejecutaremos el siguiente comando.
 
 .. code-block:: console
 
-    usuario@equipo:~/buildouts/PPM$ ./bin/buildout -vc ppm.cfg
+    usuario@equipo:~/buildouts/ppm.buildout$ ./bin/buildout -vNc cenditel.ppm.cfg
     
 Este comando descarga automáticamente todas las dependencias de PPM y las pone en los
 lugares correspondientes e instala Plone 3.3
@@ -98,58 +99,29 @@ Tercer Paso:
 ^^^^^^^^^^^^
 
 Ya con Plone instalado y descargado los productos necesarios solo queda subir la instancia de plone, ir a agregar
-Productos e instalar ppm y sus dependencias 
+Productos e instalar Project Portfolio Management Framework NG y sus dependencias 
 
 
+Dependencias
+------------
 
-Dependencias que usa PPM
-------------------------
+**DataGridField**, es un componente de entrada de la tabla para `Plone <http://plone.org/>`_. Utiliza
+Javascript para hacer la introducción de datos tabulares más de proceso de usuario 
+amigable - no hay ida y vuelta peticiones HTTP al servidor al insertar o eliminar filas.
+Más información consulte la siguiente página web: http://plone.org/products/datagridfield
 
-DataGridField
-=============
-
-Un componente de entrada de la tabla para Plone. Utiliza
-Javascript para hacer la introducción de datos tabulares
-más de proceso de usuario amigable - no hay ida y vuelta
-peticiones HTTP al servidor al insertar o eliminar filas.
-
-http://plone.org/products/datagridfield
-
-Poi
-===
-
-Poi es un producto de seguimiento de incidencias para Plone.
-
+**Poi**, es un producto de seguimiento de incidencias para Plone.
 su objetivo es ser sencillo y atractivo, proporcionando
-la cuestiónes más necesarias para el seguimiento de funcionalidades.
+la cuestiones más necesarias para el seguimiento de funcionalidades.
+Más información consulte la siguiente página web: http://plone.org/products/poi
  
-http://plone.org/products/poi
-
-
-Quills:
-=======
-
-Quills es un weblog para Plone. Se ha diseñado desde cero para trabajar
+**Quills:** es un `weblog <http://es.wikipedia.org/wiki/Weblog>`_  para `Plone <http://plone.org/>`_. Se ha diseñado desde cero para trabajar
 bien y ofrecer funciones especializadas para una multi-blog, el medio
-ambiente multi-usuario.
+ambiente multi-usuario. Más información consulte la siguiente página web: http://plone.org/products/quills
 
-http://plone.org/products/quills
+**Ploneboard:** es un producto para `Plone <http://plone.org/>`_ su objetivo es poner el comportamiento de
+un foro de debate en un sitio Plone. Más información consulte la siguiente página web: http://plone.org/products/ploneboard
 
-
-Ploneboard:
-===========
-
-Ploneboard es un producto para Plone su objetivo es poner el comportamiento de
-un foro de debate en un sitio Plone.
-
-http://plone.org/products/ploneboard
-
-
-CPFCKTemplates:
-===============
-
-Con el producto CPFCKTemplates, puede agregar una plantilla FCKeditor como un contenido de
+**CPFCKTemplates:** es un producto con el que usted puede agregar una plantilla para el editor `FCKeditor <http://plone.org/products/fckeditor/>`_  como un contenido de
 Plone. Cada usuario verá el "habilitado " las plantillas que se encuentran en el catálogo,
-es decir, sólo las plantillas que el usuario tiene permiso para ver.
-
-http://www.communesplone.org/support/documentation/manual/produit-de-gestion-des-modeles-fckeditor/referencemanual-all-pages
+es decir, sólo las plantillas que el usuario tiene permiso para ver. Más información consulte la siguiente página web: http://www.communesplone.org/support/documentation/manual/produit-de-gestion-des-modeles-fckeditor/referencemanual-all-pages
