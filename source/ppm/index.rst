@@ -3,11 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentación de Project Portfolio Management Framework!
-========================================================
-
-Tabla de Contenidos
-===================
+=========================================
+Project Portfolio Management Framework NG
+=========================================
 
 .. toctree::
    :maxdepth: 2
@@ -19,9 +17,4 @@ Tabla de Contenidos
    flujo_de_estado
    integracion_con_cynin
 
-
-Índices y tablas
-================
-
-* :ref:`search`
 

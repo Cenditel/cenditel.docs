@@ -2,8 +2,8 @@
 
 .. _instalación:
 
-Manual de Instalación:
-----------------------
+Manual de Instalación
+---------------------
 
 
 PPM (Portafolio Project Manamegent) Es un producto para Plone
@@ -102,8 +102,8 @@ Productos e instalar ppm y sus dependencias
 
 
 
-Dependencias que usa PPM:
--------------------------
+Dependencias que usa PPM
+------------------------
 
 DataGridField
 =============
