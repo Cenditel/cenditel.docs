@@ -29,18 +29,17 @@ Para realizar la descarga proceda en un terminal con los siguientes comandos:
 
 .. code-block:: console
 
-    usuario@equipo:~$ mkdir buildouts
-    usuario@equipo:~$ cd buildouts
-    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.multimedia/buildout/plone/3.3/ cenditelmultimedia
-    usuario@equipo:~/buildouts$ cd cenditelmultimedia
-    usuario@equipo:~/buildouts/cenditelmultimedia$ ls 
+    $ mkdir buildouts
+    $ cd buildouts
+    $ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.multimedia/buildout/plone/3.3/ cenditelmultimedia
+    $ cd cenditelmultimedia
+    $ ls -p
     00-varibles.cfg           06-contenttypes.cfg     plonesite.cfg
-    01-dumpedversions.cfg     bootstrap.py            products
-    02-mrdeveloper.cfg        buildout.cfg            src
-    03-prerequemients.cfg     cenditelmultimedia.cfg  templates
+    01-dumpedversions.cfg     bootstrap.py            products/
+    02-mrdeveloper.cfg        buildout.cfg            src/
+    03-prerequemients.cfg     cenditelmultimedia.cfg  templates/
     04-mountpoint.cfg         dumped-versions.cfg     versions.cfg
-    05-mediafilesstorage.cfg  etc
-
+    05-mediafilesstorage.cfg  etc/
 
 El primer comando es el encargado de crear un directorio para nuestros proyectos
 buildout, el segundo comando abre dicho directorio pero la magia realmente se encuentra
@@ -224,18 +223,17 @@ Proceda como se señala a continuación.
 
 .. code-block:: console
 
-    usuario@equipo:~$ sudo aptitude install python2.4 python2.4-minimal python2.4-dev python-virtualenv python-setuptools 
-    usuario@equipo:~$ virtualenv -p python2.4 py2.4/
-    usuario@equipo:~$ cd py2.4/
-    usuario@equipo:~/py2.4$ source bin/activate
-    usuario@equipo:~/py2.4$ cd
-    usuario@equipo:~$ cd buildouts/cenditelmultimedia
-    usuario@equipo:~/buildouts/cenditelmultimedia$ python bootstrap.py
+    $ sudo aptitude install python2.4 python2.4-minimal python2.4-dev python-virtualenv python-setuptools 
+    $ virtualenv -p python2.4 python2.4/
+    $ cd python2.4/
+    $ source bin/activate
+    (python2.4)$ cd $HOME/buildouts/cenditelmultimedia
+    (python2.4)$ python bootstrap.py
     
 El primer comando, instala las dependencias python en el sistema operativo. Si
 usted se encuentra bajo el sistema operativo Debian Lenny o Ubuntu Karmic Koala,
 no tendrá problemas de dependencias. El segundo comando, crea una jaula virtual
-de python en su directorio de usuario llamada py2.4, con el tercer comando entramos a ella,
+de python en su directorio de usuario llamada python2.4, con el tercer comando entramos a ella,
 para activarla usamos el cuarto comando, los siguientes comandos nos llevan al
 entorno de desarrollo allí llamamos al interprete de python para que ejecute al
 archivo bootstrap.py; el cual nos dará una salida como:
@@ -260,7 +258,7 @@ Tercer Paso:
 
 .. code-block:: console
 
-    usuario@equipo:~/buildouts/cenditelmultimedia$ ./bin/buildout -vc plonesite.cfg
+    (python2.4)$ ./bin/buildout -vNc cenditelmultimedia.cfg
 
 Al realizar esto, buildout ejecutará las configuraciones necesarias en el sitio para instalar los productos. A continuación vamos a ver
 como configurar el resto de la aplicación. 
