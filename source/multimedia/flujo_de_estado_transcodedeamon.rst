@@ -2,8 +2,12 @@
 
 .. _flujo_de_estado_transcodedeamon:
 
-Flujo de estado del producto cenditel.transcodedeamon
------------------------------------------------------
+Flujos de Trabajos
+------------------
 
+Por defecto, los productos de multimedia de la fundación Cenditel no posee su propio flujo de trabajo al estilo de Plone.
 
-Por definir
+cenditel.transcodedeamon
+""""""""""""""""""""""""
+
+Este producto posee su propio flujo de trabajo....

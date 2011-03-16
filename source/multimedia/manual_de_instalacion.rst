@@ -2,8 +2,8 @@
 
 .. _ManualdeInstalacion:
 
-Manual de Instalación
----------------------
+Instalación
+-----------
 
 El manual de Instalación del los productos cenditel.audio y cenditel.video cuenta basicamente con dos partes:
 
@@ -12,7 +12,7 @@ El manual de Instalación del los productos cenditel.audio y cenditel.video cuen
 
 
 Primera parte:
---------------
+""""""""""""""
 
 Para instalar el producto cenditel.multimedia usted necesita solventar las
 siguientes dependencias en su instancia Plone/Zope:
@@ -31,8 +31,8 @@ Para realizar la descarga proceda en un terminal con los siguientes comandos:
 
     usuario@equipo:~$ mkdir buildouts
     usuario@equipo:~$ cd buildouts
-    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.multimedia/buildout/plone/3.3/ plone.cenditel.multimedia
-    usuario@equipo:~/buildouts$ cd plone.cenditel.multimedia
+    usuario@equipo:~/buildouts$ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.multimedia/buildout/plone/3.3/ cenditelmultimedia
+    usuario@equipo:~/buildouts$ cd cenditelmultimedia
     usuario@equipo:~/buildouts/cenditelmultimedia$ ls 
     00-varibles.cfg           06-contenttypes.cfg     plonesite.cfg
     01-dumpedversions.cfg     bootstrap.py            products

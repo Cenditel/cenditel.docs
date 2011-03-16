@@ -2,7 +2,7 @@
 
 .. _ManualdeConfiguracion:
 
-Manual de Configuración
------------------------
+Configuración
+-------------
 
 Por definir

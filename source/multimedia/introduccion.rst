@@ -14,6 +14,30 @@ presentados en el siguiente manual, se entiende que usted esta corriendo una
 versión de python 2.4 en un sistema operativo Debian Lenny o Ubuntu 9.10 Karmic Koala.
 
 
+Componentes
+-----------
+
+Los productos multimedia de Cenditel se componente en los siguientes módulos:
+
+cenditel.audio
+""""""""""""""
+
+Este producto hace....
+
+cenditel.video
+""""""""""""""
+
+Este producto hace....
+
+cenditel.multimediaplayertheme
+""""""""""""""""""""""""""""""
+
+Este producto hace....
+
+cenditel.transcodedeamon
+""""""""""""""""""""""""
+
+Este producto hace....
 
 
 

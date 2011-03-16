@@ -2,7 +2,7 @@
 
 .. _ManualUso:
 
-Manual de Uso
--------------
+Guía de Uso
+-----------
 
 Por definir
