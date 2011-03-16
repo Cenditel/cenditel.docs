@@ -6,4 +6,4 @@ Servicios de Zope/Plone
    :maxdepth: 2
    
    introduccion
-   
+   arquitectura
