@@ -1,6 +1,6 @@
 .. highlight:: rest
 
-.. _integracion_con_cynin:
+.. _ppm2cynin:
 
 Integración con cyn.in
 ----------------------

@@ -2,8 +2,8 @@
 
 .. _instalación:
 
-Manual de Instalación
----------------------
+Instalación
+-----------
 
 
 PPM (Portafolio Project Manamegent) Es un producto para Plone
