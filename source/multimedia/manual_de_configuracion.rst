@@ -2,12 +2,12 @@
 
 .. _ManualdeConfiguracion:
 
-==============
-Configuración:
-==============
+=============
+Configuración
+=============
 
-Iniciando la Instancia en Plone 3.3.5:
-======================================
+Iniciando la Instancia en Plone 3.3.5
+=====================================
 
 Para poder visualizar su sitio Plone, usted debe proceder a iniciar la instancia del mismo:
 
@@ -15,7 +15,7 @@ Para poder visualizar su sitio Plone, usted debe proceder a iniciar la instancia
 
     (python2.4)$ ./bin/instance fg
 
-Una vez creado su sitio Plone mediante el uso de archivos de configuracion buildout,
+Una vez creado su sitio Plone mediante el uso de archivos de configuración buildout,
 usted podrá acceder a él mediante la siguiente dirección en su navegador web favorito (Todos digan conmigo, Firefox!!!).
 `http://localhost:8080/demo <http://localhost:8080/demo>`_
 
@@ -28,7 +28,7 @@ el nombre de usuario para el sitio será admin y la contraseña admin. Luego de 
 
 .. image:: ../_static/plone_logged.png
 
-En la parte superior izquierda busque el boton que dice site setup, que se puede ver en la siguiente imagen.
+En la parte superior izquierda busque el botón que dice site setup, que se puede ver en la siguiente imagen.
 
 
 .. image:: ../_static/rightcorner.png
@@ -38,43 +38,43 @@ Esto lo trasladará a la pantalla general de configuración del sitio Plone.
 .. image:: ../_static/panel.png
 
 En la parte inferior, se puede observar que existen dos paneles de uno de ellos
-se obtendra información que es de importancia para nosotros al momento de configurar
+se obtendrá información que es de importancia para nosotros al momento de configurar
 nuestra instancia. En la parte superior de la imagen, se muestra otro enlace, que dice Productos Adicionales,
 en este panel podremos ver el resultado del uso del recipe Plonesite y los perfiles de instalación que este disparó
 durante la ejecución del script buildout.
 
 Veamos primero el panel de productos adicionales.
 
-Productos adicionales:
-----------------------
+Productos adicionales
+---------------------
 
 Como se puede observar en la imagen siguiente, los productos correspondientes a los tipos de contenido de audio y vídeo,
-el programa demonio encargado de la transcodificación y el tema específico utilizado por el reproductor html5 se encuentran ya instalados en el sitio Plone.
+el programa demonio encargado de la recodificación y el tema específico utilizado por el reproductor html5 se encuentran ya instalados en el sitio Plone.
 
 .. image:: ../_static/products.png
 
-Ahora volvamos al menu superior y hagamos clic en el panel de control del menu inferior que dice Cenditel Transcode Deamon Panel.
+Ahora volvamos al menú superior y hagamos clic en el panel de control del menú inferior que dice Cenditel Transcode Deamon Panel.
 
 .. image:: ../_static/panel.png
 
-Paneles de configuración de los productos:
-------------------------------------------
+Paneles de configuración de los productos
+-----------------------------------------
 
-Cenditel Transcode Deamon Panel:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Cenditel Transcode Deamon Panel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../_static/cenditelpanel.png
 
 Como se puede observar en la imagen anterior, el panel consta de distintos elementos de configuración. A continuación
 vamos a mencionar cada uno de ellos:
 
-* Encendido del Convertidor de Archivos: Esta opción indica si el convertidor de archivos se encuentra activado, y por defecto se encuentra en encendido. Al estar apagado, un validador se encarga de controlar que los usuarios solo puedan cargar archivos de tipo de contenido correspondientes a formatos de audio y vídeo libres. Entiendase vídeo vorbis theora ó audio vorbis con extensiónes ogg.
+* Encendido del Convertidor de Archivos: Esta opción indica si el convertidor de archivos se encuentra activado, y por defecto se encuentra en encendido. Al estar apagado, un validador se encarga de controlar que los usuarios solo puedan cargar archivos de tipo de contenido correspondientes a formatos de audio y vídeo libres. Entiéndase vídeo vorbis theora ó audio vorbis con extensión ogg.
 * Dirección del Servidor Web que presta el servicio: En este caso, se hace referencia al servidor web que presta el servicio de streaming. Por defecto se encuentra configurado en http://localhost:80, puede ser cambiado por un dominio local o de internet. 
-* Punto de Montaje de File System Storage: Corresponde al directorio donde File System Storage coloca los archivos del sitio. En este caso, este valor corresponde al nivel de directorios superior del cuarto parametro, de la variable storage, en la parte fss del archivo 05-mediafilestorage.cfg de buildout o en otras palabras dado el caso particular al directorio donde se encuentra el archivo buildout.cfg. 
+* Punto de Montaje de File System Storage: Corresponde al directorio donde File System Storage coloca los archivos del sitio. En este caso, este valor corresponde al nivel de directorios superior del cuarto parámetro, de la variable storage, en la parte fss del archivo 05-mediafilestorage.cfg de buildout o en otras palabras dado el caso particular al directorio donde se encuentra el archivo buildout.cfg. 
 * Tamaño máximo de archivo a ser cargado: Especifica el tamaño máximo para archivos de audio o vídeo que pueden ser cargados. Por defecto, 30 MegaBytes
 * Parametros de FFMPEG a usar en la conversión de archivos de vídeo: Para mayor información visite `documentación oficial de ffmpeg <http://www.ffmpeg.org/ffmpeg.html#SEC3>`_
 
-* Tipos de contenidos de video validos que pueden ser cargados: Corresponde a la salida del comando file -i "Archivo.old" de sistemas Unix. Si el resultado del archivo no corresponde con alguno de los siguientes, el archivo no es codificado como archivo de vídeo e incluso no puede ser subido al servidor. Estos son los admitidos por defecto:
+* Tipos de contenidos de vídeo validos que pueden ser cargados: Corresponde a la salida del comando file -i "Archivo.old" de sistemas Unix. Si el resultado del archivo no corresponde con alguno de los siguientes, el archivo no es codificado como archivo de vídeo e incluso no puede ser subido al servidor. Estos son los admitidos por defecto:
 
     * video/3gpp: Información de `video/3gpp en Alegsa <http://www.alegsa.com.ar/Dic/3gp.php>`_.
     * video/mpeg: Información de `video/mpeg en Alegsa  <http://www.alegsa.com.ar/Dic/mpeg.php>`_.
@@ -96,17 +96,17 @@ vamos a mencionar cada uno de ellos:
 Como se mencionó anteriormente, para llenar el campo del punto de montaje de File System Storage es necesario tener cierta información,
 veamos entonces el otro panel correspondiente a FileSystem Storage Preferences.
 
-File System Storage Preferences:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File System Storage Preferences
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../_static/FSSpanel.png
 
 Como se puede observar en la imagen, el campo ``Carpeta donde se guardan los archivos`` corresponde a un directorio dependiente del directorio donde
 se encuentra el script buildout, el siguiente punto corresponde a la estrategia de almacenamiento que tiene el valor ``site2`` del cual se puede obtener más
-información en la `página oficial <http://ingeniweb.sourceforge.net/Products/FileSystemStorage/>`_
+información en la `página oficial de FSS <http://ingeniweb.sourceforge.net/Products/FileSystemStorage/>`_
 
 A continuación veamos el archivo de salida generado para el servidor nginx durante la ejecución de buildout.
-Este archivo, contiene la configuración necesaria para permitir el acceso a nuestros videos en un directorio demo.
+Este archivo, contiene la configuración necesaria para permitir el acceso a nuestros vídeos en un directorio demo.
 Usando la normativa location de nginx que apunta a nuestro directorio buildout y que debe coincidir con el directorio donde esta
 apuntando la configuración de File System Storage. 
 
@@ -166,3 +166,4 @@ Abrirá el siguiente archivo:
     
     }
 
+Para habilitar la carpeta, sencillamente se necesita realizar un enlace simbólico a
