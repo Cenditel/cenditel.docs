@@ -2,13 +2,14 @@
 
 .. _ManualdeConfiguracion:
 
-Manual de Configuración:
-------------------------
+==============
+Configuración:
+==============
 
-Iniciando la Instancia:
-"""""""""""""""""""""""
+Iniciando la Instancia en Plone 3.3.5:
+======================================
 
-Para iniciar la instancia de su sitio Plone, usted debe proceder a continuación a iniciar la instancia del mismo:
+Para poder visualizar su sitio Plone, usted debe proceder a iniciar la instancia del mismo:
 
 .. code-block:: console
 
@@ -45,7 +46,7 @@ durante la ejecución del script buildout.
 Veamos primero el panel de productos adicionales.
 
 Productos adicionales:
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 Como se puede observar en la imagen siguiente, los productos correspondientes a los tipos de contenido de audio y vídeo,
 el programa demonio encargado de la transcodificación y el tema específico utilizado por el reproductor html5 se encuentran ya instalados en el sitio Plone.
@@ -57,10 +58,10 @@ Ahora volvamos al menu superior y hagamos clic en el panel de control del menu i
 .. image:: ../_static/panel.png
 
 Paneles de configuración de los productos:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------
 
 Cenditel Transcode Deamon Panel:
-================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../_static/cenditelpanel.png
 
@@ -75,22 +76,93 @@ vamos a mencionar cada uno de ellos:
 
 * Tipos de contenidos de video validos que pueden ser cargados: Corresponde a la salida del comando file -i "Archivo.old" de sistemas Unix. Si el resultado del archivo no corresponde con alguno de los siguientes, el archivo no es codificado como archivo de vídeo e incluso no puede ser subido al servidor. Estos son los admitidos por defecto:
 
-    * video/3gpp: Información en `Alegsa <http://www.alegsa.com.ar/Dic/3gp.php>`_
-    * video/mpeg : Información en `Alegsa  <http://www.alegsa.com.ar/Dic/mpeg.php>`_
-    * video/quicktime Información en `Alegsa <http://www.alegsa.com.ar/Dic/quicktime.php>`_
-    * video/x-flv Información en `Alegsa <http://www.alegsa.com.ar/Dic/flv.php>`_
-    * video/x-mng Información en `wikipedia <http://es.wikipedia.org/wiki/Multiple-image_Network_Graphics>`_, soporte por remover.
-    * video/x-ms-wmv Información en `wikipedia <http://es.wikipedia.org/wiki/Windows_Media_Video>`_
-    * video/x-msvideo Información en `Alegsa <http://www.alegsa.com.ar/Dic/avi.php>`_
-    * video/ogg Información en `Alegsa http://www.alegsa.com.ar/Dic/ogg.php>`_
-    * video/mp4 Información en `Alegsa http://www.alegsa.com.ar/Dic/mp4.php>`_
+    * video/3gpp: Información de `video/3gpp en Alegsa <http://www.alegsa.com.ar/Dic/3gp.php>`_.
+    * video/mpeg: Información de `video/mpeg en Alegsa  <http://www.alegsa.com.ar/Dic/mpeg.php>`_.
+    * video/quicktime: Información de `video/quicktime en Alegsa <http://www.alegsa.com.ar/Dic/quicktime.php>`_.
+    * video/x-flv: Información de `video/x-flv en Alegsa <http://www.alegsa.com.ar/Dic/flv.php>`_.
+    * video/x-mng: Información en `wikipedia <http://es.wikipedia.org/wiki/Multiple-image_Network_Graphics>`_, soporte por remover.
+    * video/x-ms-wmv: Información de `video/x-ms-wmv en wikipedia <http://es.wikipedia.org/wiki/Windows_Media_Video>`_.
+    * video/x-msvideo: Información de `video/x-msvideo en Alegsa <http://www.alegsa.com.ar/Dic/avi.php>`_.
+    * video/ogg: Información de `video/ogg en Alegsa <http://www.alegsa.com.ar/Dic/ogg.php>`_.
+    * video/mp4: Información de `video/mp4 en Alegsa <http://www.alegsa.com.ar/Dic/mp4.php>`_.
 
 * Parametros de FFMPEG a usar en la conversión de archivos de audio: Para mayor información visite `documentación oficial de ffmpeg <http://www.ffmpeg.org/ffmpeg.html#SEC3>`_
 * Tipos de contenidos de audio validos que pueden ser cargados: Corresponde a la salida del comando file -i "Archivo.old" de sistemas Unix. Si el resultado del archivo no corresponde con alguno de los siguientes, el archivo no es codificado como archivo de audio e incluso no puede ser subido al servidor. Estos son los admitidos por defecto:
 
-    * audio/midi: Información en `Alegsa <http://www.alegsa.com.ar/Notas/58.php>`_
-    * audio/mpeg: Información en `Alegsa <http://www.alegsa.com.ar/Dic/mp3.php>`_
-    * audio/x-realaudio: Información en `wikipedia <http://en.wikipedia.org/wiki/RealAudio>`_
+    * audio/midi: Información de `audio/midi en Alegsa <http://www.alegsa.com.ar/Notas/58.php>`_
+    * audio/mpeg: Información de `audio/mpeg en Alegsa <http://www.alegsa.com.ar/Dic/mp3.php>`_
+    * audio/x-realaudio: Información de `audio/x-realaudio en wikipedia <http://en.wikipedia.org/wiki/RealAudio>`_
 
+Como se mencionó anteriormente, para llenar el campo del punto de montaje de File System Storage es necesario tener cierta información,
+veamos entonces el otro panel correspondiente a FileSystem Storage Preferences.
 
+File System Storage Preferences:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../_static/FSSpanel.png
+
+Como se puede observar en la imagen, el campo ``Carpeta donde se guardan los archivos`` corresponde a un directorio dependiente del directorio donde
+se encuentra el script buildout, el siguiente punto corresponde a la estrategia de almacenamiento que tiene el valor ``site2`` del cual se puede obtener más
+información en la `página oficial <http://ingeniweb.sourceforge.net/Products/FileSystemStorage/>`_
+
+A continuación veamos el archivo de salida generado para el servidor nginx durante la ejecución de buildout.
+Este archivo, contiene la configuración necesaria para permitir el acceso a nuestros videos en un directorio demo.
+Usando la normativa location de nginx que apunta a nuestro directorio buildout y que debe coincidir con el directorio donde esta
+apuntando la configuración de File System Storage. 
+
+En este caso:
+
+.. code-block:: console
+
+    $ gedit etc/nginx/sites-enabled/demo
+
+Abrirá el siguiente archivo:
+
+.. code-block:: console
+
+    server {
+            # DNS/IP y Puerto en que escucha la aplicación
+            listen   * :80;
+
+            # Nombre del servidor
+            server_name  192.168.12.215;
+
+            # Tamaña máximo de subida de archivos
+            client_max_body_size 24M;
+
+            # Tamaña máximo de buffer de archivos
+            client_body_buffer_size 128K;
+    
+            # Archivo de registro de acceso del sitio web
+            access_log  /var/log/nginx/demo.access.log;
+    
+            # Archivo de registro de error del sitio web
+            error_log  /var/log/nginx/demo.error.log error;
+    
+            # Interfaz Administrativa de Zope
+            location /manage {
+                    proxy_pass       http://192.168.12.215:8080/VirtualHostBase/http/192.168.12.215:80/manage_main/VirtualHostRoot/;
+                    proxy_set_header Host $host;
+            }
+    
+            # Sitio Proyecto Canaima 
+            location / {
+                    proxy_pass       http://192.168.12.215:8080/VirtualHostBase/http/192.168.12.215:80/demo/VirtualHostRoot/;
+                    proxy_set_header Host $host;
+            }
+    
+            # Sitio de publicación de archivos para Streaming
+            location /demo {
+                    root /home/victor/buildouts/cenditelmultimedia;
+                    autoindex on;
+            }
+    
+            # redirect server error pages to the static page /50x.html
+            #
+            error_page   500 502 503 504  /50x.html;
+            location = /50x.html {
+                    root   /var/www/nginx-default;
+            }
+    
+    }
 
