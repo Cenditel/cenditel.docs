@@ -50,7 +50,7 @@ Productos adicionales:
 Como se puede observar en la imagen siguiente, los productos correspondientes a los tipos de contenido de audio y vídeo,
 el programa demonio encargado de la transcodificación y el tema específico utilizado por el reproductor html5 se encuentran ya instalados en el sitio Plone.
 
-.. image:: _static/products.png
+.. image:: ../_static/products.png
 
 Ahora volvamos al menu superior y hagamos clic en el panel de control del menu inferior que dice Cenditel Transcode Deamon Panel.
 
