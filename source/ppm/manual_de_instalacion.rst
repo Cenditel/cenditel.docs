@@ -102,12 +102,12 @@ Productos e instalar Project Portfolio Management Framework NG y sus dependencia
 Dependencias
 ------------
 
-- **DataGridField**, es un componente de entrada de la tabla para `Plone <http://plone.org/>`_. Utiliza Javascript para hacer la introducción de datos tabulares más de proceso de usuario amigable - no hay ida y vuelta peticiones HTTP al servidor al insertar o eliminar filas. Más información consulte su `pagina <http://plone.org/products/datagridfield>`_ del proyecto. 
+- **DataGridField**, es un componente de entrada de la tabla para `Plone <http://plone.org/>`_. Utiliza Javascript para hacer la introducción de datos tabulares más de proceso de usuario amigable - no hay ida y vuelta peticiones HTTP al servidor al insertar o eliminar filas. Más información consulte la pagina de proyecto de `datagridfield <http://plone.org/products/datagridfield>`_. 
 
-- **Poi**, es un producto de seguimiento de incidencias para Plone. su objetivo es ser sencillo y atractivo, proporcionando la cuestiones más necesarias para el seguimiento de funcionalidades. Más información consulte su `pagina <http://plone.org/products/poi>`_ del proyecto.
+- **Poi**, es un producto de seguimiento de incidencias para Plone. su objetivo es ser sencillo y atractivo, proporcionando la cuestiones más necesarias para el seguimiento de funcionalidades. Más información consulte la pagina de proyecto de `poi <http://plone.org/products/poi>`_.
  
-- **Quills:** es un `weblog <http://es.wikipedia.org/wiki/Weblog>`_  para `Plone <http://plone.org/>`_. Se ha diseñado desde cero para trabajar bien y ofrecer funciones especializadas para una multi-blog, el medio ambiente multi-usuario. Más información consulte su `pagina <http://plone.org/products/quills>`_ del proyecto.
+- **Quills:** es un `weblog <http://es.wikipedia.org/wiki/Weblog>`_  para `Plone <http://plone.org/>`_. Se ha diseñado desde cero para trabajar bien y ofrecer funciones especializadas para una multi-blog, el medio ambiente multi-usuario. Más información consulte la pagina de proyecto de `quills <http://plone.org/products/quills>`_.
 
-- **Ploneboard:** es un producto para `Plone <http://plone.org/>`_ su objetivo es poner el comportamiento de un foro de debate en un sitio Plone. Más información consulte su `pagina <http://plone.org/products/ploneboard>`_ del proyecto.
+- **Ploneboard:** es un producto para `Plone <http://plone.org/>`_ su objetivo es poner el comportamiento de un foro de debate en un sitio Plone. Más información consulte la pagina de proyecto de `ploneboard <http://plone.org/products/ploneboard>`_.
 
 - **CPFCKTemplates:** es un producto con el que usted puede agregar una plantilla para el editor `FCKeditor <http://plone.org/products/fckeditor/>`_ como un contenido de Plone. Cada usuario verá el "habilitado " las plantillas que se encuentran en el catálogo, es decir, sólo las plantillas que el usuario tiene permiso para ver. Más información consulte su `manual de uso <http://translate.google.com/translate?sl=fr&tl=es&js=n&prev=_t&hl=es&ie=UTF-8&layout=2&eotf=1&u=http%3A%2F%2Fwww.communesplone.org%2Fsupport%2Fdocumentation%2Fmanual%2Fproduit-de-gestion-des-modeles-fckeditor%2Freferencemanual-all-pages>`_ del producto. 
