@@ -68,9 +68,9 @@ Cenditel Transcode Deamon Panel
 Como se puede observar en la imagen anterior, el panel consta de distintos elementos de configuración. A continuación
 vamos a mencionar cada uno de ellos:
 
-* Encendido del Convertidor de Archivos: Esta opción indica si el convertidor de archivos se encuentra activado, y por defecto se encuentra en encendido. Al estar apagado, un validador se encarga de controlar que los usuarios solo puedan cargar archivos de tipo de contenido correspondientes a formatos de audio y vídeo libres. Entiéndase vídeo vorbis theora ó audio vorbis con extensión ogg.
+* Encendido del Convertidor de Archivos: Esta opción indica si el convertidor de archivos se encuentra activado, y por defecto se encuentra en encendido. Al estar apagado, un validador se encarga de controlar que los usuarios solo puedan cargar archivos de tipo de contenido correspondientes a formatos de audio y vídeo libres. Entiéndase vídeo vorbis theora o audio vorbis con extensión ogg.
 * Dirección del Servidor Web que presta el servicio: En este caso, se hace referencia al servidor web que presta el servicio de streaming. Por defecto se encuentra configurado en http://localhost:80, puede ser cambiado por un dominio local o de internet. 
-* Punto de Montaje de File System Storage: Corresponde al directorio donde File System Storage coloca los archivos del sitio. En este caso, este valor corresponde al nivel de directorios superior del cuarto parámetro, de la variable storage, en la parte fss del archivo 05-mediafilestorage.cfg de buildout o en otras palabras dado el caso particular al directorio donde se encuentra el archivo buildout.cfg. 
+* Punto de Montaje de File System Storage: Corresponde al directorio donde File System Storage coloca los archivos del sitio. En este caso, este valor corresponde al nivel de directorios superior del cuarto parámetro, de la variable storage, en la parte fss del archivo 05-mediafilestorage.cfg de buildout o en otras palabras dado el caso particular al directorio donde se encuentra el archivo buildout.cfg. En este campo, evite dejar espacios en blanco.
 * Tamaño máximo de archivo a ser cargado: Especifica el tamaño máximo para archivos de audio o vídeo que pueden ser cargados. Por defecto, 30 MegaBytes
 * Parametros de FFMPEG a usar en la conversión de archivos de vídeo: Para mayor información visite `documentación oficial de ffmpeg <http://www.ffmpeg.org/ffmpeg.html#SEC3>`_
 
@@ -166,4 +166,33 @@ Abrirá el siguiente archivo:
     
     }
 
-Para habilitar la carpeta, sencillamente se necesita realizar un enlace simbólico a
+Para habilitar la carpeta, sencillamente se necesita realizar un enlace simbólico desde ``etc/nginx/sites-enabled/demo``
+a ``/etc/nginx/sites-enabled`` de la siguiente manera.
+
+.. code-block:: console
+
+     # ln -s etc/nginx/sites-enabled/demo /etc/nginx/sites-enabled
+
+Configuración de permisos
+-------------------------
+
+Se recomienda dar una configuración de permisos que permita la lectura y escritura
+de archivos en la carpeta que prestará el servicio de streaming a través de nginx.
+Por tanto, para la carpeta ``/home/usuario/buildout/directory/demo`` debe permitir
+la lectura, escritura y ejecución por parte del dueño y la lectura por parte de cualquier otro. Para lo cual se recomienda aplicar
+el siguiente comando:
+
+.. code-block:: console
+
+     $ chmod -R 755 /home/usuario/buildout/directory/demo
+
+Para asignar los siguientes permisos:
+
+* Dueño: Lectura, Escritura, Ejecución.
+* Grupo: Lectura y Ejecución.
+* Otros: Lectura y Ejecución.
+
+De lo contrario, las solicitudes realizadas al servidor nginx devolverán un error
+de acceso denegado a nivel de log en ``/var/log/nginx/error.log``.
+
+Una vez realizadas las configuraciones, se puede proceder a agregar contenido de ejemplo.
