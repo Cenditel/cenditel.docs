@@ -53,7 +53,7 @@ el programa demonio encargado de la recodificación y el tema específico utiliz
 
 .. image:: ../_static/products.png
 
-Ahora volvamos al menú superior y hagamos clic en el panel de control del menú inferior que dice Cenditel Transcode Deamon Panel.
+Ahora vuelva al menú superior y haga clic en el panel de control del menú inferior que dice Configuración Multimedia Cenditel.
 
 .. image:: ../_static/panel.png
 
