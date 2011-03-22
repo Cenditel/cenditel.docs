@@ -6,15 +6,6 @@
 Instalación
 ===========
 
-El manual de Instalación de los productos cenditel.audio y cenditel.video cuenta básicamente con dos partes:
-
-* Instalación en Instancias Zope Plone 3.3.5
-* Instalación en Instancias Cyn.in 3.1.3
-
-
-Primera Parte Instalación en Instancias Zope Plone 3.3.5
-========================================================
-
 Para instalar el producto cenditel.multimedia usted necesita solventar las
 siguientes dependencias en su instancia Plone/Zope
 
