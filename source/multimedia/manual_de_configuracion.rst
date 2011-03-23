@@ -92,6 +92,7 @@ vamos a mencionar cada uno de ellos:
     * audio/midi: Información de `audio/midi en Alegsa <http://www.alegsa.com.ar/Notas/58.php>`_
     * audio/mpeg: Información de `audio/mpeg en Alegsa <http://www.alegsa.com.ar/Dic/mp3.php>`_
     * audio/x-realaudio: Información de `audio/x-realaudio en wikipedia <http://en.wikipedia.org/wiki/RealAudio>`_
+    * application/octec-stream: Referente a algunos archivos mp3 de baja calidad.
 
 Como se mencionó anteriormente, para llenar el campo del punto de montaje de File System Storage es necesario tener cierta información,
 veamos entonces el otro panel correspondiente a FileSystem Storage Preferences.
