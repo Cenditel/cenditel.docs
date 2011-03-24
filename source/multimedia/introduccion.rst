@@ -23,22 +23,33 @@ Los productos multimedia de Cenditel se componente en los siguientes módulos:
 cenditel.audio
 """"""""""""""
 
-Este producto hace....
+Este producto proporciona un tipo de contenido para que archivos de audio
+puedan ser agregados al Sistema Manejador de contenidos Plone permitiendo su
+streaming a través de la Web previa reconversión a formatos libres.
 
 cenditel.video
 """"""""""""""
 
-Este producto hace....
+Este producto proporciona un tipo de contenido para que archivos de vídeo
+puedan ser agregados al Sistema Manejador de contenidos Plone permitiendo su
+streaming a través de la Web previa reconversión a formatos libres.
 
 cenditel.multimediaplayertheme
 """"""""""""""""""""""""""""""
 
-Este producto hace....
+Este producto proporciona un piel para el reproductor html5 por defecto de los
+navegadores permitiendo una vista standart para cada uno de ellos. Se basa en la
+libreria javascript jMediaElement de Alexader Farkas disponible en:
+`http://www.protofunc.com/jme/ <http://www.protofunc.com/jme/>`_
 
 cenditel.transcodedeamon
 """"""""""""""""""""""""
 
-Este producto hace....
+Este producto proporciona un panel de configuración para los productos cenditel.video
+y cenditel.audio, además permite configurar la códificación de archivos a formatos libres
+prestando el servicio de codificación mediante una cola que sigue la disciplina
+primero en entrar, primero en salir. 
+
 
 
 
