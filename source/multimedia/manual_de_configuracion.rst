@@ -21,22 +21,22 @@ usted podrá acceder a él mediante la siguiente dirección en su navegador web 
 
 A continuación verá una página web como la que se muestra a continuación.
 
-.. image:: ../_static/Plone_home.png
+.. image:: ../_static/multimedia_plone_home.png
 
 En la parte izquierda verá un ventana de identificación, por defecto tras instalar
 el nombre de usuario para el sitio será admin y la contraseña admin. Luego de llenar
 las casillas, haga clic en log in y verá la siguiente pantalla.
 
-.. image:: ../_static/plone_logged.png
+.. image:: ../_static/multimedia_plone_logged.png
 
 En la parte superior izquierda busque el botón que dice site setup, que se puede ver
 en la siguiente imagen.
 
-.. image:: ../_static/rightcorner.png
+.. image:: ../_static/multimedia_rightcorner.png
 
 Esto lo trasladará a la pantalla general de configuración del sitio Plone.
 
-.. image:: ../_static/panel.png
+.. image:: ../_static/multimedia_panel.png
 
 En la parte inferior, se puede observar que existen dos paneles de uno de ellos
 se obtendrá información que es de importancia para nosotros al momento de configurar
@@ -55,12 +55,12 @@ tipos de contenido de audio y vídeo, el programa demonio encargado de la recodi
 y el tema específico utilizado por el reproductor html5 se encuentran ya instalados
 en el sitio Plone.
 
-.. image:: ../_static/products.png
+.. image:: ../_static/multimedia_products.png
 
 Ahora vuelva al menú superior y haga clic en el panel de control del menú inferior
 que dice Configuración Multimedia Cenditel.
 
-.. image:: ../_static/panel.png
+.. image:: ../_static/multimedia_panel.png
 
 Paneles de configuración de los productos
 -----------------------------------------
@@ -68,7 +68,7 @@ Paneles de configuración de los productos
 Cenditel Transcode Deamon Panel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../_static/cenditelpanel.png
+.. image:: ../_static/multimedia_cenditelpanel.png
 
 Como se puede observar en la imagen anterior, el panel consta de distintos elementos
 de configuración. A continuación vamos a mencionar cada uno de ellos:
@@ -105,7 +105,7 @@ veamos entonces el otro panel correspondiente a FileSystem Storage Preferences.
 File System Storage Preferences
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../_static/FSSpanel.png
+.. image:: ../_static/multimedia_fss_panel.png
 
 Como se puede observar en la imagen, el campo ``Carpeta donde se guardan los archivos`` corresponde a un directorio dependiente del directorio donde
 se encuentra el script buildout, el siguiente punto corresponde a la estrategia de almacenamiento que tiene el valor ``site2`` del cual se puede obtener más
