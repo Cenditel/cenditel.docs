@@ -1,6 +1,6 @@
 .. highlight:: rest
 
-.. _Introducción:
+.. _introduccion:
 
 ============
 Introducción

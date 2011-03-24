@@ -1,6 +1,6 @@
 .. highlight:: rest
 
-.. _ManualdeConfiguracion:
+.. _manual_de_configuracion:
 
 =============
 Configuración
@@ -16,20 +16,21 @@ Para poder visualizar su sitio Plone, usted debe proceder a iniciar la instancia
     (python2.4)$ ./bin/instance fg
 
 Una vez creado su sitio Plone mediante el uso de archivos de configuración buildout,
-usted podrá acceder a él mediante la siguiente dirección en su navegador web favorito (Todos digan conmigo, Firefox!!!).
-`http://localhost:8080/demo <http://localhost:8080/demo>`_
+usted podrá acceder a él mediante la siguiente dirección en su navegador web favorito
+(Todos digan conmigo, Firefox!!!) `http://localhost:8080/demo <http://localhost:8080/demo>`_.
 
 A continuación verá una página web como la que se muestra a continuación.
 
 .. image:: ../_static/Plone_home.png
 
 En la parte izquierda verá un ventana de identificación, por defecto tras instalar
-el nombre de usuario para el sitio será admin y la contraseña admin. Luego de llenar las casillas, haga clic en log in y verá la siguiente pantalla.
+el nombre de usuario para el sitio será admin y la contraseña admin. Luego de llenar
+las casillas, haga clic en log in y verá la siguiente pantalla.
 
 .. image:: ../_static/plone_logged.png
 
-En la parte superior izquierda busque el botón que dice site setup, que se puede ver en la siguiente imagen.
-
+En la parte superior izquierda busque el botón que dice site setup, que se puede ver
+en la siguiente imagen.
 
 .. image:: ../_static/rightcorner.png
 
@@ -39,21 +40,25 @@ Esto lo trasladará a la pantalla general de configuración del sitio Plone.
 
 En la parte inferior, se puede observar que existen dos paneles de uno de ellos
 se obtendrá información que es de importancia para nosotros al momento de configurar
-nuestra instancia. En la parte superior de la imagen, se muestra otro enlace, que dice Productos Adicionales,
-en este panel podremos ver el resultado del uso del recipe Plonesite y los perfiles de instalación que este disparó
-durante la ejecución del script buildout.
+nuestra instancia. En la parte superior de la imagen, se muestra otro enlace, que dice
+Productos Adicionales, en este panel podremos ver el resultado del uso del recipe
+Plonesite y los perfiles de instalación que este disparó durante la ejecución del
+script buildout.
 
 Veamos primero el panel de productos adicionales.
 
 Productos adicionales
----------------------
+=====================
 
-Como se puede observar en la imagen siguiente, los productos correspondientes a los tipos de contenido de audio y vídeo,
-el programa demonio encargado de la recodificación y el tema específico utilizado por el reproductor html5 se encuentran ya instalados en el sitio Plone.
+Como se puede observar en la imagen siguiente, los productos correspondientes a los
+tipos de contenido de audio y vídeo, el programa demonio encargado de la recodificación
+y el tema específico utilizado por el reproductor html5 se encuentran ya instalados
+en el sitio Plone.
 
 .. image:: ../_static/products.png
 
-Ahora vuelva al menú superior y haga clic en el panel de control del menú inferior que dice Configuración Multimedia Cenditel.
+Ahora vuelva al menú superior y haga clic en el panel de control del menú inferior
+que dice Configuración Multimedia Cenditel.
 
 .. image:: ../_static/panel.png
 
@@ -65,8 +70,8 @@ Cenditel Transcode Deamon Panel
 
 .. image:: ../_static/cenditelpanel.png
 
-Como se puede observar en la imagen anterior, el panel consta de distintos elementos de configuración. A continuación
-vamos a mencionar cada uno de ellos:
+Como se puede observar en la imagen anterior, el panel consta de distintos elementos
+de configuración. A continuación vamos a mencionar cada uno de ellos:
 
 * Encendido del Convertidor de Archivos: Esta opción indica si el convertidor de archivos se encuentra activado, y por defecto se encuentra en encendido. Al estar apagado, un validador se encarga de controlar que los usuarios solo puedan cargar archivos de tipo de contenido correspondientes a formatos de audio y vídeo libres. Entiéndase vídeo vorbis theora o audio vorbis con extensión ogg.
 * Dirección del Servidor Web que presta el servicio: En este caso, se hace referencia al servidor web que presta el servicio de streaming. Por defecto se encuentra configurado en http://localhost:80, puede ser cambiado por un dominio local o de internet. 
@@ -142,13 +147,17 @@ Abrirá el siguiente archivo:
     
             # Interfaz Administrativa de Zope
             location /manage {
-                    proxy_pass       http://192.168.12.215:8080/VirtualHostBase/http/192.168.12.215:80/manage_main/VirtualHostRoot/;
+                    proxy_pass       http://192.168.12.215:8080/VirtualHostBase/
+                    http/192.168.12.215:80/manage_main/VirtualHostRoot/;
+                    
                     proxy_set_header Host $host;
             }
     
             # Sitio Proyecto Canaima 
             location / {
-                    proxy_pass       http://192.168.12.215:8080/VirtualHostBase/http/192.168.12.215:80/demo/VirtualHostRoot/;
+                    proxy_pass       http://192.168.12.215:8080/VirtualHostBase/
+                    http/192.168.12.215:80/demo/VirtualHostRoot/;
+                    
                     proxy_set_header Host $host;
             }
     
@@ -167,21 +176,22 @@ Abrirá el siguiente archivo:
     
     }
 
-Para habilitar la carpeta, sencillamente se necesita realizar un enlace simbólico desde ``etc/nginx/sites-enabled/demo``
-a ``/etc/nginx/sites-enabled`` de la siguiente manera.
+Para habilitar la carpeta, sencillamente se necesita realizar un enlace simbólico
+desde ``etc/nginx/sites-enabled/demo`` a ``/etc/nginx/sites-enabled`` de la
+siguiente manera.
 
 .. code-block:: console
 
      # ln -s etc/nginx/sites-enabled/demo /etc/nginx/sites-enabled
 
 Configuración de permisos
--------------------------
+=========================
 
 Se recomienda dar una configuración de permisos que permita la lectura y escritura
 de archivos en la carpeta que prestará el servicio de streaming a través de nginx.
 Por tanto, para la carpeta ``/home/usuario/buildout/directory/demo`` debe permitir
-la lectura, escritura y ejecución por parte del dueño y la lectura por parte de cualquier otro. Para lo cual se recomienda aplicar
-el siguiente comando:
+la lectura, escritura y ejecución por parte del dueño y la lectura por parte de
+cualquier otro. Para lo cual se recomienda aplicar el siguiente comando:
 
 .. code-block:: console
 
