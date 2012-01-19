@@ -1,6 +1,6 @@
 .. highlight:: rest
 
-.. _introduccion:
+.. _introduccion_multimedia:
 
 ============
 Introducción
