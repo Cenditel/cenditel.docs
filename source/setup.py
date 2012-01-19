@@ -5,21 +5,23 @@ from setuptools import setup, find_packages
 # 
 import os
 
-version = '0.2'
+version = '0.1'
 
-setup(name='collective.developermanual',
+setup(name='cenditel.documentation',
       version=version,
-      description="Plone community maintained developer documentation in Sphinx format",
+      description="Cenditel Foundation Plone Products Documentation in Sphinx format",
       #long_description=open("README.txt").read() + "\n",
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='',
-      author='mFabrik Research Oy',
-      author_email='info@mfabrik.com',
-      url='http://mfabrik.com',
+      keywords='cenditel foundation, plone, products, documentation, ppm, audio, video, multimedia',
+      author='Oswaldo Lopez, Víctor Terán Herrera, Leonardo J. Caballer G.',
+      author_email='elalcon89@gmail.com, oswaldolo@hotmail.com, leonardocaballero@gmail.com',
+      maintainer='Leonardo J. Caballero G.',
+      maintainer_email='leonardocaballero@gmail.com',
+      url='http://plataforma.cenditel.gob.ve/wiki/Plone',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       #namespace_packages=['gomobiletheme'],
