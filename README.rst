@@ -1,15 +1,14 @@
 cenditel.docs
 =============
 
-**cenditel.docs** package provide the Cenditel Foundation Plone Products Documentation in Sphinx format.
+**cenditel.docs** package provide the Cenditel Foundation Plone Products 
+Documentation in Sphinx format.
 
 
 Features
 --------
 
 - Sphinx format support.
-
-- Multimedia Plone Products documentation incluided.
 
 - Multimedia Plone Products documentation incluided.
 
@@ -48,7 +47,7 @@ Support
 
 If you are having issues, please let us know via the Issue Tracker.
 We can response questions and comments to **elalcon89 at gmail dot com**,
- **oswaldolo at hotmail dot com** and **leonardocaballero at gmail dot com**.
+**oswaldolo at hotmail dot com** and **leonardocaballero at gmail dot com**.
 
 
 License
