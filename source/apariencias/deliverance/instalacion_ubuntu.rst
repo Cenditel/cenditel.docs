@@ -31,7 +31,7 @@ Preparar entorno de trabajo
     $ cd $HOME ; mkdir ./virtualenv ; cd ./virtualenv
 
 .. note: 
-    Debido a los cambios de versiones algunas distros ya no vienen con un ``python2.4`` nativo en el sistema tal es el caso de la versión de ``Ubuntu`` de la 10.04  en adelante por lo que se hace necesario descargar un instalador unificado de Plone 4.x que posee un ``python2.6`` listo para su uso se puede descargar desde http://pypi.python.org/pypi/python-ldap/2.4.4. Descomprimimos el ``.tar.gz`` dentro de la carpeta que acabamos de crear y para la instalación del `"Virtualenv" <http://readthedocs.org/docs/plone-spanish-docs/en/latest/python/creacion-de-entornos-virtuales-python.html>`_ le apuntamos esa dirección quedaria algo asi: 
+    Debido a los cambios de versiones algunas distros ya no vienen con un ``python2.4`` nativo en el sistema tal es el caso de la versión de ``Ubuntu`` de la 10.04  en adelante por lo que se hace necesario descargar un instalador unificado de Plone 4.x que posee un ``python2.6`` listo para su uso se puede descargar desde https://pypi.org/project/python-ldap/2.4.4. Descomprimimos el ``.tar.gz`` dentro de la carpeta que acabamos de crear y para la instalación del `"Virtualenv" <https://plone-spanish-docs.readthedocs.io/es/latest/python/creacion_entornos_virtuales.html>`_ le apuntamos esa dirección quedaria algo asi: 
 
 .. code-block:: console
 
@@ -39,7 +39,7 @@ Preparar entorno de trabajo
 
 Nota: /usr se refiere al usuario del sistema el nombre de usuario que usted tenga en el sistema
 
-Activamos el entorno virtual recién creado y seguimos con la instalación, para mas información consultar http://readthedocs.org/docs/plone-spanish-docs/en/latest/python/creacion-de-entornos-virtuales-python.html
+Activamos el entorno virtual recién creado y seguimos con la instalación, para mas información consultar https://plone-spanish-docs.readthedocs.io/es/latest/python/creacion_entornos_virtuales.html
 
 .. code-block:: console
 
@@ -84,5 +84,5 @@ Para acceder a la consola depuración de iniciar sesión por la dirección URL h
 
 Entonces la instalación fue realizada correctamente.
 
-.. _Deliverance: http://pypi.python.org/pypi/Deliverance
+.. _Deliverance: https://pypi.org/project/Deliverance
 .. _DeliveranceDemo: http://svn.plone.org/svn/collective/deliverancedemo/trunk/

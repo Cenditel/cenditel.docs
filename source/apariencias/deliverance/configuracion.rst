@@ -34,9 +34,12 @@ Bajo este formato se configuran los proxys, para indicar donde esta la fuente de
 
     </proxy>
 
-Esta configuración previa indica que la fuente de contenido ``Plone`` sale por el puerto ``8080`` http://localhost:8080 y los cambios en el ``Deliverance`` serán vistos por el puerto ``5000`` http://localhost:5000
-Para más información sobre configuración de los Proxy revisar esta documentación:
-http://plone.org/documentation/kb/plone-apache/vhm
+Esta configuración previa indica que la fuente de contenido ``Plone`` 
+sale por el puerto ``8080`` http://localhost:8080 y los cambios en el 
+``Deliverance`` serán vistos por el puerto ``5000`` http://localhost:5000
+
+Para más información sobre configuración de los Proxy revisar la documentación sobre **How Virtual Host Monster works**: http://web.archive.org/web/20101107014540/http://plone.org/documentation/kb/plone-apache/vhm
+
 
 Para configurar Deliverance con Plone 
 =====================================

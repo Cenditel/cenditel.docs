@@ -27,21 +27,24 @@ También se realizo una encuesta que serviría para evaluar algunos puntos que p
    
 .. centered:: **Encuesta Realizada a Juan Lenzo**
 
-.. figure:: ../_static/apariencia_encuesta1.png
-   :align:   center
-   :alt: encuesta
+..
+  .. figure:: ../_static/apariencia_encuesta1.png
+     :align:   center
+     :alt: encuesta
 
    **Encuesta Realizada a Ernesto Crespo**
 
-.. figure:: ../_static/apariencia_encuesta2.png
-   :align:   center
-   :alt: encuesta
+..
+  .. figure:: ../_static/apariencia_encuesta2.png
+     :align:   center
+     :alt: encuesta
 
    **Encuesta Realizada a Yuleici Verdi**
 
-.. figure:: ../_static/apariencia_encuesta3.png
-   :align:   center
-   :alt: encuesta
+..
+  .. figure:: ../_static/apariencia_encuesta3.png
+     :align:   center
+     :alt: encuesta
 
 Experiencias con la Integración
 ===============================
@@ -52,9 +55,10 @@ Se realizo también un segundo diseño, destinado a mostrar los contenidos, el c
 
 .. centered:: **Columna 3 de la plataforma cyn.in**
 
-.. figure:: ../_static/apariencia_col3.png
-   :align:   center
-   :alt: columna 3 de la plataforma cyn.in
+..
+  .. figure:: ../_static/apariencia_col3.png
+     :align:   center
+     :alt: columna 3 de la plataforma cyn.in
 
 Este segundo diseño se usara para añadir contenidos y mostrar información de la plataforma de comunidades en Cenditel, se decidió incorporar solo la columna3 de la plataforma actual ya que dicha columna se encuentra presente en todas las secciones de la plataforma de comunidades y se aplicaría a todas las pantallas que fueran necesarias.
 
@@ -64,27 +68,31 @@ Durante la fase de programación a medida que se empezó a avanzar los diseños,
 
 .. centered:: **Primer diseño realizado**
 
-.. image:: ../_static/apariencia_evolucion.png
-   :align:   center
-   :alt: evolucion de los diseños
+..
+  .. image:: ../_static/apariencia_evolucion.png
+     :align:   center
+     :alt: evolucion de los diseños
 
 .. centered:: **Segundo diseño realizado**
 
-.. image:: ../_static/apariencia_evolucion2.png
-   :align:   center
-   :alt: evolucion de los diseños
+..
+  .. image:: ../_static/apariencia_evolucion2.png
+     :align:   center
+     :alt: evolucion de los diseños
 
 .. centered:: **Diseño final**
 
-.. image:: ../_static/apariencia_evolucion3.png
-   :align:   center
-   :alt: evolucion de los diseños
+..
+  .. image:: ../_static/apariencia_evolucion3.png
+     :align:   center
+     :alt: evolucion de los diseños
 
 .. centered:: **Maquetación en CSS de la pagina de inicio**
 
-.. image:: ../_static/apariencia_diagramacion1.png
-   :align:   center
-   :alt: maquetación en CSS
+..
+  .. image:: ../_static/apariencia_diagramacion1.png
+     :align:   center
+     :alt: maquetación en CSS
 
 **Fase de pruebas**
 
@@ -99,29 +107,33 @@ Durante la fase de prueba surgieron problemas con la pagina de inicio los cuales
 
 .. centered:: **Problema de usabilidad y accesibilidad del menú lateral**
 
-.. image:: ../_static/apariencia_problema.png
-   :align:   center
-   :alt: problema de usabilidad y accesibilidad
+..
+  .. image:: ../_static/apariencia_problema.png
+     :align:   center
+     :alt: problema de usabilidad y accesibilidad
 
 En la fase de pruebas se decidió descartar el primer diseño y se le aplicaron los cambios pertinentes al segundo diseño y al menú lateral, este menú ya no desplegara contenidos de forma horizontal y sera agregado al segundo diseño. Se decidió utilizar solo el segundo diseño para todo el contenido, como se menciono anteriormente este incorpora la columna 3 de la plataforma de comunidades la cual esta presente en todas las secciones y esta columna incorpora los elementos dinámicos necesarios para su funcionamiento tales como títulos, menús de navegación y contenidos. También incorpora el portal-breadcrumbs el cual es un elemento que permite al usuario orientarse sobre su ubicación dentro de la plataforma de comunidades.
 
 .. centered:: **Portal Breadcrumbs**
 
-.. image:: ../_static/apariencia_breadcrumbs.png
-   :align:   center
-   :alt: portal bread-crumbs
+..
+  .. image:: ../_static/apariencia_breadcrumbs.png
+     :align:   center
+     :alt: portal bread-crumbs
 
 .. centered:: **Diseño final**
 
-.. image:: ../_static/apariencia_disfinal.png
-   :align:   center
-   :alt: diseño final
+..
+  .. image:: ../_static/apariencia_disfinal.png
+     :align:   center
+     :alt: diseño final
 
 .. centered:: **Maquetación en CSS del diseño final**
 
-.. image:: ../_static/apariencia_diagramacion.png
-   :align:   center
-   :alt: maquetación en CSS del diseño final
+..
+  .. image:: ../_static/apariencia_diagramacion.png
+     :align:   center
+     :alt: maquetación en CSS del diseño final
 
 A continuación se explicara un poco sobre la diagramacion en CSS
 
@@ -136,17 +148,19 @@ A continuación se explicara un poco sobre la diagramacion en CSS
 
 .. centered:: **Menú Horizontal**
 
-.. image:: ../_static/apariencia_menu.png
-   :align:   center
-   :alt: menú horizontal
+..
+  .. image:: ../_static/apariencia_menu.png
+     :align:   center
+     :alt: menú horizontal
 
 .. centered:: **Div id="Rotator"**
 
 cada imagen puede tener un link que redireccione al portal o Web del colectivo comunitario.
 
-.. image:: ../_static/apariencia_sidebar.png
-   :align:   center
-   :alt: rotator animación en Javascript
+..
+  .. image:: ../_static/apariencia_sidebar.png
+     :align:   center
+     :alt: rotator animación en Javascript
 
 .. code-block:: html
 
@@ -262,14 +276,16 @@ A continuación unas capturas sobre como las reglas presentadas anteriormente ha
 
 .. centered:: **Portal de comunidades en Cenditel**
 
-.. image:: ../_static/apariencia_layoutcynin.png
-   :align:   center
+..
+  .. image:: ../_static/apariencia_layoutcynin.png
+     :align:   center
 
 .. centered:: **Portal de comunidades en Cenditel con el servicio de Deliverance**
 
-.. image:: ../_static/apariencia_layouttema.png
-   :align:   center
-   :alt: integración del portal de comunidades con el tema
+..
+  .. image:: ../_static/apariencia_layouttema.png
+     :align:   center
+     :alt: integración del portal de comunidades con el tema
 
 Como se pudo ver en las imágenes anteriores la columna 3 de la plataforma de comunidades y el portal-breadcrumbs se integraron correctamente en el tema, se pueden agregar contenidos, todas las vistas de aplicación funcionan. Sin embargo dicho tema es recomendable realizarle los cambios que se mencionan a continuación:
 

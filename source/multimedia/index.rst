@@ -19,5 +19,3 @@ Productos Multimedia de Cenditel
    flujo_de_estado_transcodedeamon
    integracion_con_cynin
    manual_de_codigo
-
-

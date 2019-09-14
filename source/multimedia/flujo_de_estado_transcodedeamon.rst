@@ -1,6 +1,6 @@
 .. highlight:: rest
 
-.. _flujo_de_estado_transcodedeamon:
+.. _flujo_de_estado_transcodedaemon:
 
 Flujos de Trabajos
 ------------------
@@ -8,13 +8,13 @@ Flujos de Trabajos
 Por defecto, los productos de multimedia de la fundación Cenditel no posee su propio
 flujo de trabajo al estilo de Plone.
 
-cenditel.transcodedeamon
+cenditel.transcodedaemon
 """"""""""""""""""""""""
 
 Este producto posee su propio flujo de trabajo que se basa en teoría de colas,
 usa la disciplina primero en entrar, primero en salir (FIFO). El flujo de trabajo, se encuentra
-estrechamente relacionado a los productos cenditel.audio y cenditel.video en los métodos
-de PlayingAudioType and PlayingVideoType de los modulos audioview.py y videoview.py de los paquetes browser.
+estrechamente relacionado a los productos ``cenditel.audio`` y ``cenditel.video`` en los métodos
+de PlayingAudioType and PlayingVideoType de los módulos audioview.py y videoview.py de los paquetes browser.
 
 De manera general, los métodos mencionados anteriormente obtienen una serie de configuraciones del
 panel de control de la aplicación los modifica parcialmente en caso de ser necesario eliminando los simbolos ``/``
@@ -24,9 +24,9 @@ por los nuevos archivos codificados en formatos libres.
 Origen de los datos
 ^^^^^^^^^^^^^^^^^^^
 
-En el caso del producto cenditel.audio, el método ``PlayingAudioType`` que
+En el caso del producto ``cenditel.audio``, el método ``PlayingAudioType`` que
 pertenece a la clase ``audioView`` del modulo ``audioview.py`` en el paquete browser,
-es el encargado de obtener los datos que serán manipulados por ``cenditel.transcodedeamon``.
+es el encargado de obtener los datos que serán manipulados por ``cenditel.transcodedaemon``.
 A continuación se desglosa dicho método.
 
 .. code-block:: python
@@ -34,9 +34,9 @@ A continuación se desglosa dicho método.
     def PlayingAudioType(self):
     
             """
-            Primero vamos  a obtener la configuracion desde el panel de control:
-            para eso, aplicamos la documentacion de Plone.app.registry
-            que puede ser vista en http://pypi.python.org/pypi/plone.app.registry
+            Primero vamos  a obtener la configuración desde el panel de control:
+            para eso, aplicamos la documentación de Plone.app.registry
+            que puede ser vista en https://pypi.org/project/plone.app.registry
             
                 >>> registry = getUtility(IRegistry)
                 >>> settings = registry.forInterface(ITranscodeSetings)
@@ -64,7 +64,7 @@ A continuación se desglosa dicho método.
             Las importaciones e instancias se encuentran en el modulo videoview.py.
             A continuación, se verifica si el archivo que fue cargado por el usuario
             tiene extensión ogg la cual corresponde a formatos de archivo basados en
-            estandares libres.
+            estándares libres.
             
                 >>> if self.extension=="ogg":
                      ... self.folderfileOGG=self.PathOfFile+'/' + quote(self.filenamesaved)
@@ -90,7 +90,7 @@ A continuación se desglosa dicho método.
                         ... else:
                         ....... self.AbsoluteServerPath = self.SERVER + self.folderfileOGG
                     
-            En caso contrario a que la extesión del archivo subido por el usuario
+            En caso contrario a que la extensión del archivo subido por el usuario
             sea ogg, se dispara la ejecución de un método que se encargará de
             registrar el archivo en lista de espera y almacenar en cenditelmultimedia.fs
             datos que no son accesibles desde el panel de control que pueden ser
@@ -177,7 +177,7 @@ Registro en espera
 ^^^^^^^^^^^^^^^^^^
 Como se mencionó en la sección anterior, cuando un archivo subido no corresponde
 a un archivo ogg dicho archivo es registrado en espera para posteriormente ser codificado
-según la pocisión en la cola. En otras palabras, imagine la cola de un banco, donde usted
+según la posición en la cola. En otras palabras, imagine la cola de un banco, donde usted
 entra y espera su turno, luego es atendido, y posteriormente sale del banco.
 El sistema de conversión funciona de igual manera.
 
@@ -194,9 +194,9 @@ registrar los elementos en la lista de espera.
     original en el disco duro del servidor.
     * filenamesaved: Nombre del archivo guardado originalmente.
     * idfile: Identificador del Elemento en el sitio Plone
-    * VIDEO_PARAMETRES_TRANSCODE: Los datos de configuración del elemento video
+    * VIDEO_PARAMETRES_TRANSCODE: Los datos de configuración del elemento vídeo
     en el panel de control.
-    * AUDIO_PARAMETRES_TRANSCODE: Los datos de configuración del elemento video
+    * AUDIO_PARAMETRES_TRANSCODE: Los datos de configuración del elemento vídeo
     el panel de control.
     * audio_content_types: Corresponde a los mimetypes para archivos de audio
     validos en el panel de control.
@@ -296,7 +296,7 @@ Prestación del servicio
 Una vez que el archivo cliente ha sido registrado en la lista de espera, y no existe
 ningún elemento siendo codificado en el momento, se dispara el siguiente método que
 es el encargado de extraer los archivos en espera y pasar la URL en el disco duro a una
-instancia de ffmpeg que se encargará de crear un archivo de salida con un nuevo formato
+instancia de ``ffmpeg`` que se encargará de crear un archivo de salida con un nuevo formato
 libre que permita su utilización usando html5.
 
 .. code-block:: python
@@ -386,4 +386,4 @@ libre que permita su utilización usando html5.
 	return
 
 Una vez finalizado los procesos, el archivo queda disponible para streaming. Ya
-sea en el caso de los archivos de audio o de los archivos de vídeo. 
+sea en el caso de los archivos de audio o de los archivos de vídeo.

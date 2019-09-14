@@ -6,7 +6,7 @@
 
 .. contents :: :local: 
 
-.. admonition:: Description
+.. admonition:: Descripción
 
         Como escribir y enviar mejoras al Manual de Productos Plone en la Fundación Cenditel.
 
@@ -21,9 +21,11 @@ un colaborador ejecute el siguiente comando:
 .. code-block:: sh
 
   $ svn co http://plataforma.cenditel.gob.ve/svn/plataforma/proyectosInstitucionales/renasen/cenditel.documentation/buildout cenditel-docs
-Si usted no tiene las credenciales de acceso al repositorio SVN `"Plataforma colaborativa"
-<http://plataforma.cenditel.gob.ve/svn/plataforma/>`_ de Plone o simplemente solo desea obtener 
-y compilar esta documentación ejecute el siguiente comando:
+
+Si usted no tiene las credenciales de acceso al repositorio SVN 
+`"Plataforma colaborativa" <http://plataforma.cenditel.gob.ve/svn/plataforma/>`_ 
+de Plone o simplemente solo desea obtener y compilar esta documentación ejecute 
+el siguiente comando:
 
 .. code-block:: sh
 
@@ -71,7 +73,7 @@ Reglas de redacción
 ===================
 
 En primer lugar, debe aprender los `fundamentos de Sphinx
-<http://sphinx.pocoo.org/contents.html>`_ que es un reStructuredText extendido.
+<http://www.sphinx-doc.org/en/master/>`_ que es un reStructuredText extendido.
 
 
 Codificación de caracteres
@@ -168,8 +170,8 @@ Diagramas : `Graphviz <http://www.graphviz.org/>`_
 Algunas de las herramientas recomendadas
 ========================================
 
-Emacs : usted puede agregar a emacs el módulo `rst.el
-<http://svn.berlios.de/svnroot/repos/docutils/trunk/docutils/tools/editors/emacs/rst.el>`_
+Emacs: usted puede agregar a emacs el módulo `rst.el
+<http://docutils.sourceforge.net/tools/editors/emacs/rst.el>`_
 que añade un par de comandos y la sintaxis de la documentación a los escritores 
 simpatizantes de Sphinx y reStructuredText.
 
@@ -183,4 +185,3 @@ no se actualiza cuando compilo el documento.
 **Respuesta :** El índice de Sphinx es a veces es desorientado y la gestión de la dependencia
 a veces, mejor. Por lo tanto, todo se debe reiniciar ejecutando el comando ``make clean`` 
 dentro del directorio ``cenditel-docs/sphinx/build/``.
-

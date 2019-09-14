@@ -14,9 +14,9 @@ Cuando se utiliza Diazo, tendrá que trabajar con la sintaxis y conceptos famili
 
 Para obtener documentación detallada, consulte `diazo.org`_.
 
-.. _diazo: http://pypi.python.org/pypi/diazo
-.. _Deliverance: http://pypi.python.org/pypi/Deliverance
-.. _XSLT: http://es.wikipedia.org/wiki/XSLT
-.. _HTML: http://es.wikipedia.org/wiki/HTML
-.. _CSS: http://es.wikipedia.org/wiki/Hojas_de_estilo_en_cascada
-.. _diazo.org: http://diazo.org
+.. _diazo: https://pypi.org/project/diazo
+.. _Deliverance: https://pypi.org/project/Deliverance
+.. _XSLT: https://es.wikipedia.org/wiki/XSLT
+.. _HTML: https://es.wikipedia.org/wiki/HTML
+.. _CSS: https://es.wikipedia.org/wiki/Hojas_de_estilo_en_cascada
+.. _diazo.org: http://docs.diazo.org/en/latest/

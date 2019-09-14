@@ -69,15 +69,17 @@ Veamos un ejemplo de esto utilizando un ``Plone`` como fuente de contenido, se s
 
 La barra de búsqueda de Plone identificada con la clase ``LSBox``.
 
-.. image:: ../_static/apariencia_superponer1.png
-   :align: center
-   :alt: Barra de búsqueda de Plone
+..
+  .. image:: ../_static/apariencia_superponer1.png
+     :align: center
+     :alt: Barra de búsqueda de Plone
 
 El contenedor cuyo id es ``user`` contiene una lista no ordenada identificada como ``usuario`` la cual vendría siendo hijo de la clase ``user``.
 
-.. image:: ../_static/apariencia_superponer2.png
-  :align: center
-  :alt: Lista no Ordenada
+..
+  .. image:: ../_static/apariencia_superponer2.png
+    :align: center
+    :alt: Lista no Ordenada
 
 Si usamos la regla en Deliverance ``replace`` usando directamente la clase ``user`` tendremos como resultado:
 
@@ -85,9 +87,10 @@ Si usamos la regla en Deliverance ``replace`` usando directamente la clase ``use
 
     <replace content=".LSBox" theme=".user" />
 
-.. image:: ../_static/apariencia_superponer3.png
-   :align:   center
-   :alt: ubicación incorrecta
+..
+  .. image:: ../_static/apariencia_superponer3.png
+     :align:   center
+     :alt: ubicación incorrecta
 
 Como se podrá ver utilizando directamente la clase ``user`` los ``CSS`` de la barra de búsqueda de Plone se superponen a los del tema quedando en una ubicación incorrecta.
 
@@ -97,9 +100,10 @@ Si se usa la misma regla de ``replace`` pero esta vez invocando el elemento hijo
 
     <replace content=".LSBox" theme="children:#usuario" />
 
-.. image:: ../_static/apariencia_superponer4.png
-   :align:   center
-   :alt: ubicación correcta
+..
+  .. image:: ../_static/apariencia_superponer4.png
+     :align:   center
+     :alt: ubicación correcta
 
 Consejo para el uso de XPath
 ----------------------------
@@ -114,9 +118,11 @@ A continuación un caso de practico tomando el ejemplo anterior pero esta vez us
 
 Nos da como resultado que el DOM de nuestro HTML ha sido cambiado y causa un error como este:
 
-.. image:: ../_static/apariencia_error.png
-   :align:   center
-   :alt: error XPath
+
+..
+  .. image:: ../_static/apariencia_error.png
+     :align:   center
+     :alt: error XPath
 
 Si estuvo realizando los cambios desde la consola de depuración no podrá solucionarlo volviendo atrás, para volver al estado anterior tendrá que detener el servicio presionando ``crtl+c``, modificar el archivo rules con un editor de texto de su preferencia y borrar la linea de configuración que ocasiono el error, guardar los cambios e iniciar de nuevo el servicio.
 

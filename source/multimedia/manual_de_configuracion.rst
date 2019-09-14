@@ -24,7 +24,7 @@ A continuación verá una página web como la que se muestra a continuación.
 .. image:: ../_static/multimedia_plone_home.png
 
 En la parte izquierda verá un ventana de identificación, por defecto tras instalar
-el nombre de usuario para el sitio será admin y la contraseña admin. Luego de llenar
+el nombre de usuario para el sitio será ``admin`` y la contraseña ``admin``. Luego de llenar
 las casillas, haga clic en log in y verá la siguiente pantalla.
 
 .. image:: ../_static/multimedia_plone_logged.png
@@ -74,33 +74,49 @@ Como se puede observar en la imagen anterior, el panel consta de distintos eleme
 de configuración. A continuación vamos a mencionar cada uno de ellos:
 
 * Encendido del Convertidor de Archivos: Esta opción indica si el convertidor de archivos se encuentra activado, y por defecto se encuentra en encendido. Al estar apagado, un validador se encarga de controlar que los usuarios solo puedan cargar archivos de tipo de contenido correspondientes a formatos de audio y vídeo libres. Entiéndase vídeo vorbis theora o audio vorbis con extensión ogg.
-* Dirección del Servidor Web que presta el servicio: En este caso, se hace referencia al servidor web que presta el servicio de streaming. Por defecto se encuentra configurado en http://localhost:80, puede ser cambiado por un dominio local o de internet. 
+
+* Dirección del Servidor Web que presta el servicio: En este caso, se hace referencia al servidor web que presta el servicio de streaming. Por defecto se encuentra configurado en http://localhost:80, puede ser cambiado por un dominio local o de Internet. 
+
 * Punto de Montaje de File System Storage: Corresponde al directorio donde File System Storage coloca los archivos del sitio. En este caso, este valor corresponde al nivel de directorios superior del cuarto parámetro, de la variable storage, en la parte fss del archivo 05-mediafilestorage.cfg de buildout o en otras palabras dado el caso particular al directorio donde se encuentra el archivo buildout.cfg. En este campo, evite dejar espacios en blanco.
+
 * Tamaño máximo de archivo a ser cargado: Especifica el tamaño máximo para archivos de audio o vídeo que pueden ser cargados. Por defecto, 30 MegaBytes
-* Parametros de FFMPEG a usar en la conversión de archivos de vídeo: Para mayor información visite `documentación oficial de ffmpeg <http://www.ffmpeg.org/ffmpeg.html#SEC3>`_
+
+* Parámetros de FFMPEG a usar en la conversión de archivos de vídeo: Para mayor información visite `documentación oficial de ffmpeg <http://www.ffmpeg.org/ffmpeg.html#SEC3>`_
 
 * Tipos de contenidos de vídeo validos que pueden ser cargados: Corresponde a la salida del comando file -i "Archivo.old" de sistemas Unix. Si el resultado del archivo no corresponde con alguno de los siguientes, el archivo no es codificado como archivo de vídeo e incluso no puede ser subido al servidor. Estos son los admitidos por defecto:
 
     * video/3gpp: Información de `video/3gpp en Alegsa <http://www.alegsa.com.ar/Dic/3gp.php>`_.
+
     * video/mpeg: Información de `video/mpeg en Alegsa  <http://www.alegsa.com.ar/Dic/mpeg.php>`_.
+
     * video/quicktime: Información de `video/quicktime en Alegsa <http://www.alegsa.com.ar/Dic/quicktime.php>`_.
+
     * video/x-flv: Información de `video/x-flv en Alegsa <http://www.alegsa.com.ar/Dic/flv.php>`_.
-    * video/x-mng: Información en `wikipedia <http://es.wikipedia.org/wiki/Multiple-image_Network_Graphics>`_, soporte por remover.
-    * video/x-ms-wmv: Información de `video/x-ms-wmv en wikipedia <http://es.wikipedia.org/wiki/Windows_Media_Video>`_.
+
+    * video/x-mng: Información en `wikipedia <https://es.wikipedia.org/wiki/Multiple-image_Network_Graphics>`_, soporte por remover.
+
+    * video/x-ms-wmv: Información de `video/x-ms-wmv en wikipedia <https://es.wikipedia.org/wiki/Windows_Media_Video>`_.
+
     * video/x-msvideo: Información de `video/x-msvideo en Alegsa <http://www.alegsa.com.ar/Dic/avi.php>`_.
+
     * video/ogg: Información de `video/ogg en Alegsa <http://www.alegsa.com.ar/Dic/ogg.php>`_.
+
     * video/mp4: Información de `video/mp4 en Alegsa <http://www.alegsa.com.ar/Dic/mp4.php>`_.
 
-* Parametros de FFMPEG a usar en la conversión de archivos de audio: Para mayor información visite `documentación oficial de ffmpeg <http://www.ffmpeg.org/ffmpeg.html#SEC3>`_
+* Parámetros de FFMPEG a usar en la conversión de archivos de audio: Para mayor información visite `documentación oficial de ffmpeg <http://www.ffmpeg.org/ffmpeg.html#SEC3>`_
+
 * Tipos de contenidos de audio validos que pueden ser cargados: Corresponde a la salida del comando file -i "Archivo.old" de sistemas Unix. Si el resultado del archivo no corresponde con alguno de los siguientes, el archivo no es codificado como archivo de audio e incluso no puede ser subido al servidor. Estos son los admitidos por defecto:
 
     * audio/midi: Información de `audio/midi en Alegsa <http://www.alegsa.com.ar/Notas/58.php>`_
+
     * audio/mpeg: Información de `audio/mpeg en Alegsa <http://www.alegsa.com.ar/Dic/mp3.php>`_
-    * audio/x-realaudio: Información de `audio/x-realaudio en wikipedia <http://en.wikipedia.org/wiki/RealAudio>`_
+
+    * audio/x-realaudio: Información de `audio/x-realaudio en wikipedia <https://en.wikipedia.org/wiki/RealAudio>`_
+
     * application/octec-stream: Referente a algunos archivos mp3 de baja calidad.
 
 Como se mencionó anteriormente, para llenar el campo del punto de montaje de File System Storage es necesario tener cierta información,
-veamos entonces el otro panel correspondiente a FileSystem Storage Preferences.
+veamos entonces el otro panel correspondiente a ``FileSystem Storage Preferences``.
 
 File System Storage Preferences
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -200,7 +216,9 @@ cualquier otro. Para lo cual se recomienda aplicar el siguiente comando:
 Para asignar los siguientes permisos:
 
 * Dueño: Lectura, Escritura, Ejecución.
+
 * Grupo: Lectura y Ejecución.
+
 * Otros: Lectura y Ejecución.
 
 De lo contrario, las solicitudes realizadas al servidor nginx devolverán un error

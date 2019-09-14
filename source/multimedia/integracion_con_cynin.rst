@@ -7,7 +7,7 @@ Integración con cyn.in
 
 Primer Paso
 ^^^^^^^^^^^
-Descargar de la pagina Web del Proyecto el script de instalación buildout que le permitira configurar un sitio demostrativo.
+Descargar de la pagina Web del Proyecto el script de instalación buildout que le permitirá configurar un sitio demostrativo.
 Para realizar la descarga proceda en un terminal con los siguientes comandos:
 
 .. code-block:: console
@@ -28,7 +28,7 @@ Para realizar la descarga proceda en un terminal con los siguientes comandos:
 Segundo paso
 ^^^^^^^^^^^^
 
-Instale una jaula de python2.4 en su sistema para evitar daños a su sistema operativo.
+Instale una jaula de ``python2.4`` en su sistema para evitar daños a su sistema operativo.
 Proceda como se señala a continuación.
 
 .. code-block:: console
@@ -45,8 +45,8 @@ Proceda como se señala a continuación.
 
 Tercer Paso
 ^^^^^^^^^^^
-Edite el archivo user.cfg y cambie la variable ``effective-user`` de manera que el
-valor corresponda con el nombre de usuario de su sesion Unix. 
+Edite el archivo ``user.cfg`` y cambie la variable ``effective-user`` de manera que el
+valor corresponda con el nombre de usuario de su sesión Unix. 
 
 .. code-block:: console
 
@@ -66,8 +66,8 @@ A continuación usted debe proceder a iniciar la instancia del mismo:
     (python2.4)$ ./bin/instance fg
 
 Dirijase a la interfaz administrativa de Zope a través de `http://localhost:8080/manage <http://localhost:8080/manage>`_
-El nombre de usuario por defecto es admin y la contraseña es secret. En la parte superior derecha,
-se observa un menu desplegable. Haga clic en él y seleccione la opción que dice: ``Plone site``
+El nombre de usuario por defecto es ``admin`` y la contraseña es ``secret``. En la parte superior derecha,
+se observa un menú desplegable. Haga clic en él y seleccione la opción que dice: ``Plone site``
 
 En la siguiente ventana, agregue un identificador en minúsculas para el sitio,
 dadas la configuraciones que realizo buildout en la etapa anterior, debe colocar
@@ -160,8 +160,8 @@ Al finalizar ejecute nuevamente la instancia.
 
     (python2.4)$ ./bin/instance fg
 
-Luego, dirijase a `http://localhost:8080/manage <http://localhost:8080/manage>`_
-dirijase nuevamente a ``portal_quick_installer`` y marque la casilla ubisite.policy
+Luego, diríjase a `http://localhost:8080/manage <http://localhost:8080/manage>`_
+diríjase nuevamente a ``portal_quick_installer`` y marque la casilla ubisite.policy
 presione reinstall.
 
 Al terminar vuelva a `http://localhost:8080/demo <http://localhost:8080/demo>`_

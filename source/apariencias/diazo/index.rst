@@ -14,7 +14,7 @@ XDV / diazo
    usando
    consejos
 
-   XDV / Diazo <http://diazo.org/introduction.html>
+   XDV / Diazo <http://docs.diazo.org/en/latest//introduction.html>
 
-.. _diazo: http://pypi.python.org/pypi/diazo
-.. _HTML: http://es.wikipedia.org/wiki/HTML
+.. _diazo: https://pypi.org/project/diazo
+.. _HTML: https://es.wikipedia.org/wiki/HTML

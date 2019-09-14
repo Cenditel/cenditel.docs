@@ -76,5 +76,5 @@ A este punto ya la instalación debe haberse realizado correctamente y se debe p
 
     $ source $HOME/python2.4/bin/activate 
 
-.. _Deliverance: http://pypi.python.org/pypi/Deliverance
+.. _Deliverance: https://pypi.org/project/Deliverance
 .. _DeliveranceDemo: http://svn.plone.org/svn/collective/deliverancedemo/trunk/

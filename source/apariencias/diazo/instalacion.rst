@@ -154,9 +154,9 @@ Uno sólo tiene que lanzar el proxy con el siguiente comando:
 
 A continuación, puede tener acceso a nuestra página en http://127.0.0.1:5000 .
 
-.. _diazo: http://pypi.python.org/pypi/diazo
-.. _easy_install: http://plone-spanish-docs.readthedocs.org/en/latest/python/setuptools.html
-.. _pip: http://plone-spanish-docs.readthedocs.org/en/latest/python/distribute-y-pip.html
-.. _zc.buildout: http://plone-spanish-docs.readthedocs.org/en/latest/buildout/replicacion-de-proyectos-python.html#que-es-zc-buildout
-.. _entorno virtual: http://plone-spanish-docs.readthedocs.org/en/latest/python/creacion-de-entornos-virtuales-python.html
-.. _middleware WSGI: http://en.wikipedia.org/wiki/Python_Paste#WSGI_middleware
+.. _diazo: https://pypi.org/project/diazo
+.. _easy_install: https://plone-spanish-docs.readthedocs.io/es/latest/python/setuptools.html
+.. _pip: https://plone-spanish-docs.readthedocs.io/es/latest/python/distribute_pip.html
+.. _zc.buildout: https://plone-spanish-docs.readthedocs.io/es/latest/buildout/replicacion_proyectos_python.html#python-buildout
+.. _entorno virtual: https://plone-spanish-docs.readthedocs.io/es/latest/python/creacion_entornos_virtuales.html
+.. _middleware WSGI: https://en.wikipedia.org/wiki/Python_Paste#WSGI_middleware

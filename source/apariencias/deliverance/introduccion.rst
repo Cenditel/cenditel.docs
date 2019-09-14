@@ -53,7 +53,7 @@ Es recomendable poseer conocimiento en las siguientes conceptos/tecnologías/her
 
 Beneficios
 ==========
-- Los diseñadores Web no necesitan aprender el sistema manejador de contenidos ``CMS``, el ``Framework`` o sistema de temas de un sitio/aplicación Web.
+- Los diseñadores Web no necesitan aprender el sistema administración de contenidos ``CMS``, el ``Framework`` o sistema de temas de un sitio/aplicación Web.
 
 - Se puede unificar el diseño de múltiples aplicaciones Web con un diseño unificado aplicado a wikis, blogs, contenido estático ``HTML``, entre otros.
 
@@ -66,16 +66,16 @@ Beneficios
 
       Conferencia Easier and faster Plone theming with Deliverance and xdv por `Nate Aune`_.
 
-.. _Deliverance: http://pypi.python.org/pypi/Deliverance
-.. _XSLT: http://es.wikipedia.org/wiki/XSLT
-.. _HTML: http://es.wikipedia.org/wiki/HTML
-.. _CSS: http://es.wikipedia.org/wiki/Hojas_de_estilo_en_cascada
-.. _proxy inverso: http://es.wikipedia.org/wiki/Proxy#Reverse_Proxy_.2F_Proxy_inverso
-.. _reescritura direcciones URL: http://plone-spanish-docs.readthedocs.org/en/latest/zope/zope-plone-detras-servidor-web.html#terminologia-general
-.. _replace: http://packages.python.org/Deliverance/rules.html#behavior-replace
-.. _append, prepend: http://packages.python.org/Deliverance/rules.html#behavior-append-prepend
-.. _drop: http://packages.python.org/Deliverance/rules.html#behavior-drop
-.. _XML: http://es.wikipedia.org/wiki/Extensible_Markup_Language
-.. _XPath: http://es.wikipedia.org/wiki/XPath
+.. _Deliverance: https://pypi.org/project/Deliverance
+.. _XSLT: https://es.wikipedia.org/wiki/XSLT
+.. _HTML: https://es.wikipedia.org/wiki/HTML
+.. _CSS: https://es.wikipedia.org/wiki/Hojas_de_estilo_en_cascada
+.. _proxy inverso: https://es.wikipedia.org/wiki/Proxy#Reverse_Proxy_.2F_Proxy_inverso
+.. _reescritura direcciones URL: https://plone-spanish-docs.readthedocs.io/es/latest/zope/zope-plone-detras-servidor-web.html#terminologia-general
+.. _replace: https://pythonhosted.org/Deliverance/rules.html#behavior-replace
+.. _append, prepend: https://pythonhosted.org/Deliverance/rules.html#behavior-append-prepend
+.. _drop: https://pythonhosted.org/Deliverance/rules.html#behavior-drop
+.. _XML: https://es.wikipedia.org/wiki/Extensible_Markup_Language
+.. _XPath: https://es.wikipedia.org/wiki/XPath
 .. _Easier and faster Plone theming with Deliverance and xdv: http://ploneconference2010.blip.tv/file/4314435/
-.. _Nate Aune: http://twitter.com/natea
+.. _Nate Aune: https://twitter.com/natea

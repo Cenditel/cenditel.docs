@@ -104,6 +104,6 @@ Para acceder a la consola depuración de iniciar sesión por la dirección URL h
 
 Entonces la instalación fue realizada correctamente.
 
-.. _Deliverance: http://pypi.python.org/pypi/Deliverance
+.. _Deliverance: https://pypi.org/project/Deliverance
 .. _DeliveranceDemo: http://svn.plone.org/svn/collective/deliverancedemo/trunk/
-.. _aquí: http://readthedocs.org/docs/plone-spanish-docs/en/latest/python/creacion-de-entornos-virtuales-python.html
+.. _aquí: https://plone-spanish-docs.readthedocs.io/es/latest/python/creacion_entornos_virtuales.html

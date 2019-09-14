@@ -8,11 +8,11 @@
 Instalación
 ===========
 
-Para instalar Deliverance, usted podría instalar la distribución de `Deliverance`_  de PyPI.
+Para instalar ``Deliverance``, usted podría instalar la distribución de `Deliverance`_  de PyPI.
 
 .. note::
 
-    El paquete Deliverance sólo se requiere para obtener el comando para manipular el `servidor proxy`_ Deliverance.
+    El paquete ``Deliverance`` sólo se requiere para obtener el comando para manipular el `servidor proxy`_ Deliverance.
 
 Usted puede instalar la distribución de `Deliverance`_ usando `easy_install`_, `pip`_ o `zc.buildout`_. Por ejemplo, usando ``easy_install`` (sería ideal si se ejecuta dentro de un `entorno virtual`_ Python):
 
@@ -42,7 +42,7 @@ Para este caso se instalara el ejemplo de instalación llamado `DeliveranceDemo`
 Instalación en diversas plataformas
 ===================================
 
-A continuación se ofrece una serie de recetas de como instalar Deliverance en varios sistemas operativos:
+A continuación se ofrece una serie de recetas de como instalar ``Deliverance`` en varios sistemas operativos:
 
 .. toctree::
    :maxdepth: 2
@@ -52,12 +52,12 @@ A continuación se ofrece una serie de recetas de como instalar Deliverance en v
    instalacion_python
 
 
-.. _Deliverance: http://pypi.python.org/pypi/Deliverance
-.. _easy_install: http://plone-spanish-docs.readthedocs.org/en/latest/python/setuptools.html
-.. _pip: http://plone-spanish-docs.readthedocs.org/en/latest/python/distribute-y-pip.html
-.. _zc.buildout: http://plone-spanish-docs.readthedocs.org/en/latest/buildout/replicacion-de-proyectos-python.html#que-es-zc-buildout
-.. _entorno virtual: http://plone-spanish-docs.readthedocs.org/en/latest/python/creacion-de-entornos-virtuales-python.html
-.. _middleware WSGI: http://en.wikipedia.org/wiki/Python_Paste#WSGI_middleware
+.. _Deliverance: https://pypi.org/project/Deliverance/
+.. _easy_install: https://plone-spanish-docs.readthedocs.io/es/latest/python/setuptools.html
+.. _pip: https://plone-spanish-docs.readthedocs.io/es/latest/python/distribute_pip.html
+.. _zc.buildout: https://plone-spanish-docs.readthedocs.io/es/latest/buildout/replicacion_proyectos_python.html
+.. _entorno virtual: https://plone-spanish-docs.readthedocs.io/es/latest/python/creacion_entornos_virtuales.html
+.. _middleware WSGI: https://en.wikipedia.org/wiki/Python_Paste#WSGI_middleware
 .. _DeliveranceDemo: http://svn.plone.org/svn/collective/deliverancedemo/trunk/
-.. _servidor proxy: http://es.wikipedia.org/wiki/Servidor_proxy
+.. _servidor proxy: https://es.wikipedia.org/wiki/Servidor_proxy
 

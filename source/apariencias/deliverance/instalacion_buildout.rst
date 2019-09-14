@@ -200,7 +200,7 @@ Como puede ver le esta indicando que Deliverance esta siendo servido por la dire
 
 Para acceder a la consola depuración de iniciar sesión por la dirección URL http://localhost:5000/.deliverance/login y luego acceder a la dirección URL http://localhost:5000/?deliv_log
 
-.. _Deliverance: http://pypi.python.org/pypi/Deliverance
+.. _Deliverance: https://pypi.org/project/Deliverance
 .. _DeliveranceDemo: http://svn.plone.org/svn/collective/deliverancedemo/trunk/
-.. _servidor proxy: http://es.wikipedia.org/wiki/Servidor_proxy
+.. _servidor proxy: https://es.wikipedia.org/wiki/Servidor_proxy
 
